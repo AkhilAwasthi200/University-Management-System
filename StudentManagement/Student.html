@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="./Student.css">
+</head>
+
+<body>
+    <main class="container">
+            <!-- Page Title -->
+        <section class="pagetitle">
+            <h1>Student Management System</h1>
+            <p>Manage student information and academic records</p>
+        </section>
+
+            <!-- Student Records -->
+        <section class="student-records">
+            <div class="records-header">
+                <div>
+                    <h2>Student Records</h2>
+                    <p>
+                        List of registered students
+                   </p>
+                </div>
+
+
+                <!-- Search UI - JavaScript will be added later -->
+
+                <input
+                    type="text"
+                    placeholder="Search Student...">
+            </div>
+
+
+            <div class="table-data">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Phone</th>
+                             <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <!-- Student 1 -->
+
+                        <tr>
+                            <td>STU001</td>
+                            <td>Rahul Sharma</td>
+                            <td>rahul@gmail.com</td>
+                            <td>B.Tech CSE</td>
+                            <td>CSE</td>
+                            <td>5th</td>
+                            <td>9876543210</td>
+
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Student 2 -->
+
+                        <tr>
+                            <td>STU002</td>
+                            <td>Priya Singh</td>
+                            <td>priya@gmail.com</td>
+                            <td>B.Tech CSE</td>
+                            <td>CSE</td>
+                            <td>4th</td>
+                            <td>9876543211</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Student 3 -->
+                        <tr>
+                            <td>STU003</td>
+                            <td>Aman Kumar</td>
+                            <td>aman@gmail.com</td>
+                            <td>B.Tech ECE</td>
+                            <td>ECE</td>
+                            <td>3rd</td>
+                            <td>9876543212</td>
+                            <td>
+                                <span class="status inactive">
+                                    Inactive
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                       </tr>
+
+
+                       <!-- Student 4 -->
+                        <tr>
+                            <td>STU004</td>
+                            <td>Rishi Sorout</td>
+                            <td>rishi@gmail.com</td>
+                            <td>B.Tech CSE</td>
+                            <td>CSE</td>
+                            <td>5th</td>
+                            <td>9876543215</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Student 5-->
+                         <tr>
+                            <td>STU005</td>
+                            <td>Madhur Dubey</td>
+                            <td>madhur@gmail.com</td>
+                            <td>B.Tech ME</td>
+                            <td>ME</td>
+                            <td>5th</td>
+                            <td>9876543216</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Student 6 -->
+                         <tr>
+                            <td>STU006</td>
+                            <td>Aryan Agrawal</td>
+                            <td>aryan@gmail.com</td>
+                            <td>B.Tech CSE-AIML</td>
+                            <td>CSE</td>
+                            <td>6th</td>
+                            <td>9876543217</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <!-- Student 7 -->
+                         <tr>
+                            <td>STU007</td>
+                            <td>Shivang Singh</td>
+                            <td>shivang@gmail.com</td>
+                            <td>B.Tech CSE</td>
+                            <td>CSE</td>
+                            <td>5th</td>
+                            <td>9876543219</td>
+                            <td>
+                                <span class="status inactive">
+                                    Inactive
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Student 8 -->
+                         <tr>
+                            <td>STU008</td>
+                            <td>Yash Gupta</td>
+                            <td>yash@gmail.com</td>
+                            <td>B.Tech CSE</td>
+                            <td>CSE</td>
+                            <td>2nd</td>
+                            <td>9876543214</td>
+                            <td>
+                                <span class="status active">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td>
+                                <button class="view-btn">
+                                    View
+                                </button>
+                                <button class="edit-btn">
+                                    Edit
+                                </button>
+                                <button class="delete-btn">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+       <!-- Student Profile -->
+
+        <section class="student-profile">
+            <h2>Student Profile</h2>
+            <p>Selected student information</p>
+            <div class="profile-card">
+
+                <div class="profile-header">
+
+                    <div class="profile-photo">
+                        AT
+                    </div>
+
+                    <div>
+                        <h2>Aman Sharma</h2>
+                        <p>Student ID: STU004</p>
+                        <span class="status active">
+                            Active
+                        </span>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <div>
+                        <label>Course</label>
+                        <strong>B.Tech CSE</strong>
+                    </div>
+                    <div>
+                        <label>Department</label>
+                        <strong>Computer Science</strong>
+                    </div>
+                    <div>
+                        <label>Semester</label>
+                        <strong>4th Semester</strong>
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <strong>aman@gmail.com</strong>
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <strong>9876543213</strong>
+                    </div>
+                    <div>
+                        <label>Status</label>
+                        <strong>Active</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+            <!-- Add Student Form -->
+        <section class="student-form">
+
+            <h2>Add New Student</h2>
+            <p>Enter student details below</p>
+
+
+            <form>
+                <div class="form">
+                    <label>Student ID</label>
+                    <input
+                        type="text"
+                        placeholder="Enter Student ID"
+                        required>
+                </div>
+
+
+                <div class="form">
+                    <label>Student Name</label>
+                    <input
+                        type="text"
+                        placeholder="Enter Student Name"
+                        required >
+                </div>
+
+
+                <div class="form">
+                    <label>Student Email</label>
+                    <input
+                        type="email"
+                        placeholder="Enter Student Email"
+                        required>
+                </div>
+
+
+                <div class="form">
+                    <label>Phone Number</label>
+                    <input
+                        type="tel"
+                        placeholder="Enter Phone Number">
+                </div>
+
+
+                <div class="form">
+
+                    <label>Course</label>
+
+                    <select required>
+                        <option value="">Select Course</option>
+                        <option>B.Tech CSE</option>
+                        <option>B.Tech CSE-AIML</option>
+                        <option>B.Tech CS-Honours</option>
+                        <option>B.Tech ECE</option>
+                        <option>B.Tech ME</option>
+                        <option>BBA</option>
+                        <option>Polytechnic</option>
+                        <option>MBA</option>
+                        <option>BCA</option>
+                        <option>MCA</option>
+                        <option>B.Pharma</option>
+                    </select>
+                </div>
+
+                <div class="form">
+
+                    <label>Department</label>
+                    <select required>
+                        <option value="">Select Department</option>
+                        <option>
+                            Computer Science & Engineering
+                        </option>
+                        <option>
+                            Artificial Intelligence & Machine Learning
+                        </option>
+                        <option>
+                            Electronics & Communication
+                        </option>
+                        <option>
+                            Mechanical Engineering
+                        </option>
+                        <option>
+                            Management
+                        </option>
+                        <option>
+                            Pharmacy
+                        </option>
+                    </select>
+                </div>
+
+
+                <div class="form">
+                    <label>Semester</label>
+                    <select required>
+                        <option value="">Select Semester</option>
+                        <option>1st Semester</option>
+                        <option>2nd Semester</option>
+                        <option>3rd Semester</option>
+                        <option>4th Semester</option>
+                        <option>5th Semester</option>
+                        <option>6th Semester</option>
+                        <option>7th Semester</option>
+                        <option>8th Semester</option>
+                    </select>
+                </div>
+
+
+                <div class="form">
+                    <label>Date of Birth</label>
+                    <input type="date">
+                </div>
+
+
+                <div class="form">
+                    <label>Gender</label>
+                    <select>
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+
+                <div class="form">
+                    <label>Status</label>
+                    <select>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                        <option>Graduated</option>
+                    </select>
+                </div>
+                <div class="form address">
+                    <label>Address</label>
+                    <textarea
+                        placeholder="Enter Student Address" ></textarea>
+                </div>
+                <div class="btn">
+                    <button
+                        type="submit"
+                        class="add-btn">
+                        Add Student
+                    </button>
+                    <button
+                        type="reset"
+                        class="reset-btn">
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+
