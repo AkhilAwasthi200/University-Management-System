@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examination Management | Apex Global University UMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/academic.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION (Common across all 4 pages)
+       ========================================================================= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-sub">Academic Module • Member 4</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Core Management</div>
+      
+      <!-- 1. Dashboard -->
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- 2. Students -->
+      <a href="students.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span>Students</span>
+      </a>
+
+      <!-- 3. Faculty -->
+      <a href="faculty.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span>Faculty</span>
+      </a>
+
+      <!-- 4. Departments -->
+      <a href="departments.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span>Departments</span>
+      </a>
+
+      <div class="sidebar-nav-label">Academic Operations</div>
+
+      <!-- 5. Courses -->
+      <a href="courses.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span>Courses</span>
+      </a>
+
+      <!-- 6. Attendance -->
+      <a href="attendance.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </span>
+        <span>Attendance</span>
+      </a>
+
+      <!-- 7. Examination (ACTIVE) -->
+      <a href="examination.html" class="sidebar-link active">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span>Examination</span>
+      </a>
+
+      <!-- 8. Results -->
+      <a href="results.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </span>
+        <span>Results</span>
+      </a>
+
+      <div class="sidebar-nav-label">Preferences</div>
+
+      <!-- 9. Settings -->
+      <a href="#settings" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <span>Settings</span>
+      </a>
+
+      <!-- 10. Logout -->
+      <a href="login.html" class="sidebar-link" style="color: #f87171;">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Enr: 2415000156</span>
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        Active
+      </span>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN WRAPPER & HEADER
+       ========================================================================= -->
+  <div class="dashboard-wrapper">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="text-muted">Academics</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Examination</span>
+        </nav>
+        <div class="header-page-title">Examination Management</div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search Field -->
+        <div class="header-search">
+          <span class="header-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="search" placeholder="Search exams, course codes..." aria-label="Search examinations">
+        </div>
+
+        <!-- Notification Indicator -->
+        <div class="notification-indicator" title="Exam Cell notices">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">2</span>
+        </div>
+
+        <!-- Administrator Profile -->
+        <div class="admin-profile" title="Member 4 Academic Administrator">
+          <div class="admin-avatar">AA</div>
+          <div class="admin-meta">
+            <span class="admin-name">Dr. Akhil Awasthi</span>
+            <span class="admin-role">Academic Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="academic-main">
+      
+      <!-- Page Title & Description Block -->
+      <div class="page-header-block">
+        <div class="page-title-wrap">
+          <h1>Examination Timetables & Room Seating Allocation</h1>
+          <p>Supervise semester end-term tests, practical assessments, hall invigilator duties, and schedule publishing.</p>
+        </div>
+        <div class="page-header-actions">
+          <a href="#new-schedule" class="btn btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Publish New Schedule
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           EXAMINATION STATISTICS CARDS (The 4 requested metrics)
+           ===================================================================== -->
+      <div class="academic-stats-grid">
+        
+        <!-- 1. Upcoming Exams -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Upcoming Exams</span>
+            <span class="stat-value" style="color: var(--primary);">24</span>
+            <span class="stat-subtext">Scheduled next 2 weeks</span>
+          </div>
+          <div class="stat-icon-wrap icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. Completed Exams -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Completed Exams</span>
+            <span class="stat-value" style="color: var(--success);">48</span>
+            <span class="stat-subtext">Mid-terms & lab tests evaluated</span>
+          </div>
+          <div class="stat-icon-wrap icon-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. Total Subjects -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Total Subjects</span>
+            <span class="stat-value">96</span>
+            <span class="stat-subtext">Undergrad & Postgrad courses</span>
+          </div>
+          <div class="stat-icon-wrap icon-teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 4. Exam Rooms -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Allocated Rooms</span>
+            <span class="stat-value">18</span>
+            <span class="stat-subtext">Halls, auditoriums & computer labs</span>
+          </div>
+          <div class="stat-icon-wrap icon-purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           UPCOMING EXAMINATION HIGHLIGHT & NOTICES
+           ===================================================================== -->
+      <div class="highlight-grid">
+        <!-- Highlight Card -->
+        <div class="card spotlight-card">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-primary" style="margin-bottom: 0.35rem;">Major Examination Event</span>
+              <div class="card-title">Fall 2026 End-Semester Examinations (Theory)</div>
+            </div>
+            <span class="badge badge-info">Starting Oct 12, 2026</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
+              Centralized university theory assessments for all B.Tech, M.Tech, and B.Sc programs will commence across 18 authorized examination centers. Hall tickets are available for digital download through student dossiers.
+            </p>
+            <div class="spotlight-meta-grid">
+              <div class="spotlight-meta-item">
+                <span class="spotlight-meta-label">Session Windows</span>
+                <span class="spotlight-meta-value">Morning (10 AM) / Afternoon (2 PM)</span>
+              </div>
+              <div class="spotlight-meta-item">
+                <span class="spotlight-meta-label">Chief Controller</span>
+                <span class="spotlight-meta-value">Dr. Akhil Awasthi (Admin)</span>
+              </div>
+              <div class="spotlight-meta-item">
+                <span class="spotlight-meta-label">Enrolled Candidates</span>
+                <span class="spotlight-meta-value">2,308 Eligible Students</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Examination Notices Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Examination Cell Notices</div>
+            <span class="badge badge-warning">Advisory</span>
+          </div>
+          <div class="card-body">
+            <div class="notices-list">
+              <div class="notice-item">
+                <div class="notice-item-header">
+                  <span class="notice-tag">Security Protocol</span>
+                  <span class="notice-date">Oct 02, 2026</span>
+                </div>
+                <div class="notice-title">Admit Card & ID Mandate</div>
+                <p class="notice-desc">Entry to examination halls strictly requires verified physical Admit Card and official Student ID card.</p>
+              </div>
+
+              <div class="notice-item" style="border-left-color: var(--danger);">
+                <div class="notice-item-header">
+                  <span class="notice-tag" style="color: var(--danger);">Prohibited Items</span>
+                  <span class="notice-date">Oct 01, 2026</span>
+                </div>
+                <div class="notice-title">Electronics Disallowance</div>
+                <p class="notice-desc">Smart watches, cellular phones, and programmable calculators are strictly banned inside testing centers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           SEARCH & FILTER TOOLBAR
+           ===================================================================== -->
+      <div class="filter-toolbar">
+        <div class="filter-controls">
+          <div class="search-input-wrap">
+            <span class="search-input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" placeholder="Filter by subject or exam code..." aria-label="Filter timetable">
+          </div>
+
+          <!-- Semester filter -->
+          <label for="examSemFilter" class="sr-only" style="display:none;">Semester</label>
+          <select id="examSemFilter" class="filter-select" aria-label="Select Semester">
+            <option value="">All Semesters</option>
+            <option value="3">Semester III</option>
+            <option value="4">Semester IV</option>
+            <option value="5">Semester V</option>
+            <option value="7">Semester VII</option>
+          </select>
+
+          <!-- Exam Type filter -->
+          <label for="examTypeFilter" class="sr-only" style="display:none;">Exam Type</label>
+          <select id="examTypeFilter" class="filter-select" aria-label="Select Exam Type">
+            <option value="">All Types (Theory / Lab)</option>
+            <option value="theory">Theory Examination</option>
+            <option value="lab">Practical / Viva</option>
+          </select>
+
+          <!-- Status filter -->
+          <label for="examStatusFilter" class="sr-only" style="display:none;">Status</label>
+          <select id="examStatusFilter" class="filter-select" aria-label="Select Status">
+            <option value="">All Statuses</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="completed">Completed</option>
+            <option value="postponed">Postponed</option>
+          </select>
+        </div>
+
+        <div>
+          <a href="#reset" class="btn btn-secondary btn-sm">Reset</a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           EXAMINATION TIMETABLE TABLE
+           ===================================================================== -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <div>
+            <div class="table-card-title">Official Examination Timetable</div>
+            <div class="table-card-subtitle">End-Semester Fall 2026 Examination Roster</div>
+          </div>
+          <span class="badge badge-primary">6 Papers Listed</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th scope="col">Exam ID</th>
+                <th scope="col">Course Code</th>
+                <th scope="col">Subject Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Room</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Paper 1 -->
+              <tr>
+                <td class="code-cell">EX-2026-101</td>
+                <td class="code-cell">CS-301</td>
+                <td class="primary-text-cell">Data Structures & Algorithms</td>
+                <td>Oct 12, 2026</td>
+                <td>Monday</td>
+                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">Hall A-101</span></td>
+                <td>Semester III</td>
+                <td><span class="badge badge-scheduled">Scheduled</span></td>
+              </tr>
+
+              <!-- Paper 2 -->
+              <tr>
+                <td class="code-cell">EX-2026-102</td>
+                <td class="code-cell">EC-204</td>
+                <td class="primary-text-cell">Signals and Linear Systems</td>
+                <td>Oct 13, 2026</td>
+                <td>Tuesday</td>
+                <td class="numeric-cell">02:00 PM - 05:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">Hall B-204</span></td>
+                <td>Semester IV</td>
+                <td><span class="badge badge-scheduled">Scheduled</span></td>
+              </tr>
+
+              <!-- Paper 3 -->
+              <tr>
+                <td class="code-cell">EX-2026-103</td>
+                <td class="code-cell">ME-312</td>
+                <td class="primary-text-cell">Applied Thermodynamics</td>
+                <td>Oct 14, 2026</td>
+                <td>Wednesday</td>
+                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">Hall A-102</span></td>
+                <td>Semester V</td>
+                <td><span class="badge badge-scheduled">Scheduled</span></td>
+              </tr>
+
+              <!-- Paper 4 -->
+              <tr>
+                <td class="code-cell">EX-2026-104</td>
+                <td class="code-cell">CS-482</td>
+                <td class="primary-text-cell">Machine Learning & Neural Nets</td>
+                <td>Oct 15, 2026</td>
+                <td>Thursday</td>
+                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">IT Block 301</span></td>
+                <td>Semester VII</td>
+                <td><span class="badge badge-scheduled">Scheduled</span></td>
+              </tr>
+
+              <!-- Paper 5 (Postponed Example) -->
+              <tr>
+                <td class="code-cell">EX-2026-105</td>
+                <td class="code-cell">CE-208</td>
+                <td class="primary-text-cell">Structural Analysis & Mechanics</td>
+                <td>Oct 16, 2026</td>
+                <td>Friday</td>
+                <td class="numeric-cell">02:00 PM - 05:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">Hall C-105</span></td>
+                <td>Semester IV</td>
+                <td><span class="badge badge-postponed">Postponed</span></td>
+              </tr>
+
+              <!-- Paper 6 (Completed Example) -->
+              <tr>
+                <td class="code-cell">EX-2026-106</td>
+                <td class="code-cell">BT-315</td>
+                <td class="primary-text-cell">Molecular Biology & Genomics</td>
+                <td>Oct 08, 2026</td>
+                <td>Thursday</td>
+                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
+                <td>3 Hours</td>
+                <td><span class="badge badge-neutral">Bio Lab 102</span></td>
+                <td>Semester V</td>
+                <td><span class="badge badge-completed">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
