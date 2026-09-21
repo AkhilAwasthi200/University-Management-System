@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Faculty Profile | Apex Global University UMS</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/faculty.css">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-sub">
+          Faculty Module • Member 3
+        </span>
+      </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      <div class="sidebar-nav-label">Core Management</div>
+
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="sidebar-icon">▦</span>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="students.html" class="sidebar-link">
+        <span class="sidebar-icon">♙</span>
+        <span>Students</span>
+      </a>
+
+      <a href="faculty.html" class="sidebar-link active">
+        <span class="sidebar-icon">♙</span>
+        <span>Faculty</span>
+      </a>
+
+      <a href="departments.html" class="sidebar-link">
+        <span class="sidebar-icon">▥</span>
+        <span>Departments</span>
+      </a>
+
+
+      <div class="sidebar-nav-label">Academic Operations</div>
+
+      <a href="courses.html" class="sidebar-link">
+        <span class="sidebar-icon">▤</span>
+        <span>Courses</span>
+      </a>
+
+      <a href="attendance.html" class="sidebar-link">
+        <span class="sidebar-icon">✓</span>
+        <span>Attendance</span>
+      </a>
+
+      <a href="examination.html" class="sidebar-link">
+        <span class="sidebar-icon">◷</span>
+        <span>Examination</span>
+      </a>
+
+      <a href="results.html" class="sidebar-link">
+        <span class="sidebar-icon">⌁</span>
+        <span>Results</span>
+      </a>
+
+
+      <div class="sidebar-nav-label">Account</div>
+
+      <a href="login.html" class="sidebar-link logout-link">
+        <span class="sidebar-icon">⇥</span>
+        <span>Logout</span>
+      </a>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+      <span>Enr: 2415000126</span>
+
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        Active
+      </span>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN WRAPPER -->
+  <div class="dashboard-wrapper">
+
+
+    <!-- HEADER -->
+    <header class="app-header">
+
+      <div class="header-left">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+
+          <a href="dashboard.html">
+            Dashboard
+          </a>
+
+          <span class="breadcrumb-separator">/</span>
+
+          <a href="faculty.html">
+            Faculty
+          </a>
+
+          <span class="breadcrumb-separator">/</span>
+
+          <span class="breadcrumb-current">
+            Faculty Profile
+          </span>
+
+        </nav>
+
+        <div class="header-page-title">
+          Faculty Profile
+        </div>
+
+      </div>
+
+
+      <div class="header-right">
+
+        <div class="header-search">
+
+          <span class="header-search-icon">⌕</span>
+
+          <input
+            type="search"
+            placeholder="Search faculty records..."
+            aria-label="Search faculty"
+          >
+
+        </div>
+
+
+        <div class="notification-indicator">
+          ♧
+          <span class="notification-badge">3</span>
+        </div>
+
+
+        <div class="admin-profile">
+
+          <div class="admin-avatar">
+            AD
+          </div>
+
+          <div class="admin-meta">
+
+            <span class="admin-name">
+              Dr. Adwitiya
+            </span>
+
+            <span class="admin-role">
+              Faculty Administrator
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="faculty-main">
+
+
+      <!-- PROFILE HEADER -->
+      <section
+        class="faculty-profile-header"
+        style="
+          background:#ffffff;
+          border:1px solid #e2e8f0;
+          border-radius:12px;
+          padding:28px;
+          margin-bottom:20px;
+        "
+      >
+
+        <div
+          style="
+            display:flex;
+            align-items:center;
+            gap:20px;
+          "
+        >
+
+          <div
+            style="
+              width:78px;
+              height:78px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              border-radius:50%;
+              background:#eff6ff;
+              color:#1d4ed8;
+              font-size:24px;
+              font-weight:700;
+              flex-shrink:0;
+            "
+          >
+            RS
+          </div>
+
+
+          <div>
+
+            <div
+              style="
+                color:#64748b;
+                font-size:12px;
+                margin-bottom:5px;
+              "
+            >
+              FAC-2018-0034
+            </div>
+
+            <h1
+              style="
+                margin:0 0 6px;
+                color:#1e293b;
+                font-size:26px;
+              "
+            >
+              Dr. Rajesh Sharma
+            </h1>
+
+            <p
+              style="
+                margin:0 0 10px;
+                color:#64748b;
+                font-size:14px;
+              "
+            >
+              Professor • Computer Science & Engineering
+            </p>
+
+            <span class="badge badge-active">
+              Active Faculty
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROFILE GRID -->
+      <section
+        style="
+          display:grid;
+          grid-template-columns:2fr 1fr;
+          gap:20px;
+        "
+      >
+
+
+        <!-- LEFT COLUMN -->
+        <div>
+
+
+          <!-- PERSONAL INFORMATION -->
+          <div
+            style="
+              background:#ffffff;
+              border:1px solid #e2e8f0;
+              border-radius:12px;
+              padding:22px;
+              margin-bottom:20px;
+            "
+          >
+
+            <h2
+              style="
+                margin:0 0 18px;
+                color:#1e293b;
+                font-size:18px;
+              "
+            >
+              Personal & Professional Information
+            </h2>
+
+
+            <div
+              style="
+                display:grid;
+                grid-template-columns:repeat(2,1fr);
+                gap:20px;
+              "
+            >
+
+              <div>
+                <span class="stat-label">
+                  Faculty ID
+                </span>
+
+                <strong>
+                  FAC-2018-0034
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Designation
+                </span>
+
+                <strong>
+                  Professor
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Department
+                </span>
+
+                <strong>
+                  Computer Science & Engineering
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Experience
+                </span>
+
+                <strong>
+                  18 Years
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Email
+                </span>
+
+                <strong>
+                  rajesh.sharma@faculty.apex.edu
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Phone
+                </span>
+
+                <strong>
+                  +91 98765 43210
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ACADEMIC INFORMATION -->
+          <div
+            style="
+              background:#ffffff;
+              border:1px solid #e2e8f0;
+              border-radius:12px;
+              padding:22px;
+            "
+          >
+
+            <h2
+              style="
+                margin:0 0 18px;
+                color:#1e293b;
+                font-size:18px;
+              "
+            >
+              Academic Information
+            </h2>
+
+
+            <div
+              style="
+                display:grid;
+                grid-template-columns:repeat(2,1fr);
+                gap:20px;
+              "
+            >
+
+              <div>
+                <span class="stat-label">
+                  Highest Qualification
+                </span>
+
+                <strong>
+                  Ph.D. in Computer Science
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Specialization
+                </span>
+
+                <strong>
+                  Artificial Intelligence & ML
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Courses Teaching
+                </span>
+
+                <strong>
+                  AI, Machine Learning, Data Mining
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Research Area
+                </span>
+
+                <strong>
+                  Intelligent Systems
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+        <div>
+
+
+          <!-- DEPARTMENT CARD -->
+          <div
+            style="
+              background:#ffffff;
+              border:1px solid #e2e8f0;
+              border-radius:12px;
+              padding:22px;
+              margin-bottom:20px;
+            "
+          >
+
+            <h2
+              style="
+                margin:0 0 16px;
+                color:#1e293b;
+                font-size:18px;
+              "
+            >
+              Department
+            </h2>
+
+            <div
+              style="
+                background:#eff6ff;
+                border-radius:10px;
+                padding:16px;
+              "
+            >
+
+              <div
+                style="
+                  color:#2563eb;
+                  font-size:12px;
+                  font-weight:600;
+                  margin-bottom:5px;
+                "
+              >
+                CSE
+              </div>
+
+              <strong
+                style="
+                  display:block;
+                  color:#1e293b;
+                  margin-bottom:6px;
+                "
+              >
+                Computer Science & Engineering
+              </strong>
+
+              <span
+                style="
+                  color:#64748b;
+                  font-size:12px;
+                "
+              >
+                Department Faculty: 32
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- QUICK DETAILS -->
+          <div
+            style="
+              background:#ffffff;
+              border:1px solid #e2e8f0;
+              border-radius:12px;
+              padding:22px;
+            "
+          >
+
+            <h2
+              style="
+                margin:0 0 16px;
+                color:#1e293b;
+                font-size:18px;
+              "
+            >
+              Quick Details
+            </h2>
+
+
+            <div
+              style="
+                display:flex;
+                flex-direction:column;
+                gap:15px;
+              "
+            >
+
+              <div>
+                <span class="stat-label">
+                  Joining Date
+                </span>
+
+                <strong>
+                  12 July 2008
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Office
+                </span>
+
+                <strong>
+                  CSE Block • Room 204
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Office Hours
+                </span>
+
+                <strong>
+                  10:00 AM – 4:00 PM
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="stat-label">
+                  Faculty Status
+                </span>
+
+                <span class="badge badge-active">
+                  Active
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- BACK BUTTON -->
+      <div style="margin-top:20px;">
+
+        <a
+          href="faculty.html"
+          class="btn btn-secondary"
+        >
+          ← Back to Faculty Directory
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

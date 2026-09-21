@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Departments | Apex Global University UMS</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/faculty.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">U</div>
+
+        <div>
+          <div class="sidebar-brand-name">Apex Global UMS</div>
+          <span class="sidebar-brand-sub"> Faculty Module • Member 3 </span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Core Management</div>
+
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="sidebar-icon">▦</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="students.html" class="sidebar-link">
+          <span class="sidebar-icon">♙</span>
+          <span>Students</span>
+        </a>
+
+        <a href="faculty.html" class="sidebar-link">
+          <span class="sidebar-icon">♙</span>
+          <span>Faculty</span>
+        </a>
+
+        <a href="departments.html" class="sidebar-link active">
+          <span class="sidebar-icon">▥</span>
+          <span>Departments</span>
+        </a>
+
+        <div class="sidebar-nav-label">Academic Operations</div>
+
+        <a href="courses.html" class="sidebar-link">
+          <span class="sidebar-icon">▤</span>
+          <span>Courses</span>
+        </a>
+
+        <a href="attendance.html" class="sidebar-link">
+          <span class="sidebar-icon">✓</span>
+          <span>Attendance</span>
+        </a>
+
+        <a href="examination.html" class="sidebar-link">
+          <span class="sidebar-icon">◷</span>
+          <span>Examination</span>
+        </a>
+
+        <a href="results.html" class="sidebar-link">
+          <span class="sidebar-icon">⌁</span>
+          <span>Results</span>
+        </a>
+
+        <div class="sidebar-nav-label">Account</div>
+
+        <a href="login.html" class="sidebar-link logout-link">
+          <span class="sidebar-icon">⇥</span>
+          <span>Logout</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Enr: 2415000126</span>
+
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          Active
+        </span>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="dashboard-wrapper">
+      <!-- HEADER -->
+      <header class="app-header">
+        <div class="header-left">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="dashboard.html"> Dashboard </a>
+
+            <span class="breadcrumb-separator">/</span>
+
+            <span class="breadcrumb-current"> Departments </span>
+          </nav>
+
+          <div class="header-page-title">Department Management</div>
+        </div>
+
+        <div class="header-right">
+          <div class="header-search">
+            <span class="header-search-icon">⌕</span>
+
+            <input
+              type="search"
+              placeholder="Search departments..."
+              aria-label="Search departments"
+            />
+          </div>
+
+          <div class="notification-indicator">
+            ♧
+            <span class="notification-badge">3</span>
+          </div>
+
+          <div class="admin-profile">
+            <div class="admin-avatar">AD</div>
+
+            <div class="admin-meta">
+              <span class="admin-name"> Dr. Adwitiya </span>
+
+              <span class="admin-role"> Faculty Administrator </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="faculty-main">
+        <!-- PAGE HEADER -->
+        <div class="page-header-block">
+          <div class="page-title-wrap">
+            <h1>Department Management</h1>
+
+            <p>
+              View academic departments, their heads, faculty strength, student
+              count, and associated courses.
+            </p>
+          </div>
+
+          <div class="page-header-actions">
+            <a href="faculty.html" class="btn btn-secondary"> View Faculty </a>
+
+            <a href="#add-department" class="btn btn-primary">
+              + Add Department
+            </a>
+          </div>
+        </div>
+
+        <!-- DEPARTMENT SUMMARY -->
+        <section class="faculty-stats-grid">
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Total Departments </span>
+
+              <span class="stat-value" style="color: #2563eb"> 12 </span>
+
+              <span class="stat-subtext"> Academic departments </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-blue">🏛</div>
+          </div>
+
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Total Faculty </span>
+
+              <span class="stat-value" style="color: #7c3aed"> 185 </span>
+
+              <span class="stat-subtext"> Teaching staff </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-purple">👥</div>
+          </div>
+
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Total Students </span>
+
+              <span class="stat-value" style="color: #0f766e"> 4,850 </span>
+
+              <span class="stat-subtext"> Across all departments </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-teal">🎓</div>
+          </div>
+
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Active Courses </span>
+
+              <span class="stat-value" style="color: #b45309"> 164 </span>
+
+              <span class="stat-subtext"> Current academic session </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-gold">📚</div>
+          </div>
+        </section>
+
+        <!-- DEPARTMENT TABLE -->
+        <section class="faculty-table-card">
+          <div class="faculty-table-header">
+            <div>
+              <h2>Academic Departments</h2>
+
+              <p>Department-wise academic and faculty information.</p>
+            </div>
+          </div>
+
+          <div class="faculty-table-wrapper">
+            <table class="faculty-table">
+              <thead>
+                <tr>
+                  <th>Department ID</th>
+
+                  <th>Department</th>
+
+                  <th>Head of Department</th>
+
+                  <th>Faculty</th>
+
+                  <th>Students</th>
+
+                  <th>Courses</th>
+
+                  <th>Status</th>
+
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- CSE -->
+                <tr>
+                  <td class="code-cell">DEP-001</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #eff6ff; color: #1d4ed8"
+                      >
+                        CS
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Computer Science & Engineering
+                        </span>
+
+                        <span class="faculty-id-sub"> CSE </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Dr. Rajesh Sharma</td>
+
+                  <td>32</td>
+
+                  <td>820</td>
+
+                  <td>28</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- IT -->
+                <tr>
+                  <td class="code-cell">DEP-002</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #f0fdfa; color: #0f766e"
+                      >
+                        IT
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Information Technology
+                        </span>
+
+                        <span class="faculty-id-sub"> IT </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Dr. Shalini Verma</td>
+
+                  <td>24</td>
+
+                  <td>690</td>
+
+                  <td>23</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ECE -->
+                <tr>
+                  <td class="code-cell">DEP-003</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #f5f3ff; color: #7e22ce"
+                      >
+                        EC
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Electronics & Communication
+                        </span>
+
+                        <span class="faculty-id-sub"> ECE </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Dr. Meenakshi Sundaram</td>
+
+                  <td>21</td>
+
+                  <td>610</td>
+
+                  <td>21</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ME -->
+                <tr>
+                  <td class="code-cell">DEP-004</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #fff7ed; color: #9a3412"
+                      >
+                        ME
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Mechanical Engineering
+                        </span>
+
+                        <span class="faculty-id-sub"> ME </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Prof. Arvind Kulkarni</td>
+
+                  <td>19</td>
+
+                  <td>540</td>
+
+                  <td>19</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- CIVIL -->
+                <tr>
+                  <td class="code-cell">DEP-005</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #fef3c7; color: #92400e"
+                      >
+                        CE
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Civil Engineering
+                        </span>
+
+                        <span class="faculty-id-sub"> CE </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Prof. Tariq Mansoor</td>
+
+                  <td>16</td>
+
+                  <td>430</td>
+
+                  <td>17</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- APPLIED SCIENCE -->
+                <tr>
+                  <td class="code-cell">DEP-006</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background: #f0fdf4; color: #166534"
+                      >
+                        AS
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Applied Sciences
+                        </span>
+
+                        <span class="faculty-id-sub"> AS </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>Dr. Ananya Mukherjee</td>
+
+                  <td>18</td>
+
+                  <td>760</td>
+
+                  <td>26</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="faculty.html" class="action-btn action-btn-view">
+                        Faculty
+                      </a>
+
+                      <a href="#view" class="action-btn action-btn-edit">
+                        View
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="pagination-wrap">
+            <div class="pagination-info">
+              Showing
+              <strong>1</strong>
+              to
+              <strong>6</strong>
+              of
+              <strong>12</strong>
+              departments
+            </div>
+
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a href="#prev" class="page-link"> &laquo; Prev </a>
+              </li>
+
+              <li class="page-item active">
+                <a href="#page-1" class="page-link"> 1 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#page-2" class="page-link"> 2 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#next" class="page-link"> Next &raquo; </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Faculty Management | Apex Global University UMS</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/faculty.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">U</div>
+
+        <div>
+          <div class="sidebar-brand-name">Apex Global UMS</div>
+          <span class="sidebar-brand-sub"> Faculty Module • Member 3 </span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Core Management</div>
+
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="sidebar-icon">▦</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="students.html" class="sidebar-link">
+          <span class="sidebar-icon">♙</span>
+          <span>Students</span>
+        </a>
+
+        <a href="faculty.html" class="sidebar-link active">
+          <span class="sidebar-icon">♙</span>
+          <span>Faculty</span>
+        </a>
+
+        <a href="departments.html" class="sidebar-link">
+          <span class="sidebar-icon">▥</span>
+          <span>Departments</span>
+        </a>
+
+        <div class="sidebar-nav-label">Academic Operations</div>
+
+        <a href="courses.html" class="sidebar-link">
+          <span class="sidebar-icon">▤</span>
+          <span>Courses</span>
+        </a>
+
+        <a href="attendance.html" class="sidebar-link">
+          <span class="sidebar-icon">✓</span>
+          <span>Attendance</span>
+        </a>
+
+        <a href="examination.html" class="sidebar-link">
+          <span class="sidebar-icon">◷</span>
+          <span>Examination</span>
+        </a>
+
+        <a href="results.html" class="sidebar-link">
+          <span class="sidebar-icon">⌁</span>
+          <span>Results</span>
+        </a>
+
+        <div class="sidebar-nav-label">Account</div>
+
+        <a href="login.html" class="sidebar-link logout-link">
+          <span class="sidebar-icon">⇥</span>
+          <span>Logout</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Enr: 2415000126</span>
+
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          Active
+        </span>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="dashboard-wrapper">
+      <!-- HEADER -->
+      <header class="app-header">
+        <div class="header-left">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="dashboard.html">Dashboard</a>
+
+            <span class="breadcrumb-separator">/</span>
+
+            <span class="breadcrumb-current"> Faculty </span>
+          </nav>
+
+          <div class="header-page-title">Faculty Management</div>
+        </div>
+
+        <div class="header-right">
+          <div class="header-search">
+            <span class="header-search-icon">⌕</span>
+
+            <input
+              type="search"
+              placeholder="Search faculty records..."
+              aria-label="Search faculty"
+            />
+          </div>
+
+          <div class="notification-indicator" title="Faculty notifications">
+            ♧
+            <span class="notification-badge">3</span>
+          </div>
+
+          <div class="admin-profile" title="Member 3 Faculty Administrator">
+            <div class="admin-avatar">AD</div>
+
+            <div class="admin-meta">
+              <span class="admin-name"> Dr. Adwitiya </span>
+
+              <span class="admin-role"> Faculty Administrator </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="faculty-main">
+        <!-- PAGE HEADER -->
+        <div class="page-header-block">
+          <div class="page-title-wrap">
+            <h1>Faculty Management</h1>
+
+            <p>
+              Supervise academic teaching staff, professorial appointments,
+              departmental designations, and faculty status.
+            </p>
+          </div>
+
+          <div class="page-header-actions">
+            <a href="departments.html" class="btn btn-secondary">
+              View Departments
+            </a>
+
+            <a href="#add-faculty" class="btn btn-primary">
+              + Add New Faculty
+            </a>
+          </div>
+        </div>
+
+        <!-- FACULTY SUMMARY CARDS -->
+        <section class="faculty-stats-grid">
+          <!-- TOTAL FACULTY -->
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Total Faculty </span>
+
+              <span class="stat-value" style="color: var(--primary)">
+                185
+              </span>
+
+              <span class="stat-subtext"> Across 12 academic departments </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-blue">👥</div>
+          </div>
+
+          <!-- PROFESSORS -->
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Professors </span>
+
+              <span class="stat-value" style="color: var(--purple)"> 42 </span>
+
+              <span class="stat-subtext">
+                Senior chairs & Department Heads
+              </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-purple">★</div>
+          </div>
+
+          <!-- ASSOCIATE PROFESSORS -->
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Associate Professors </span>
+
+              <span class="stat-value" style="color: var(--secondary)">
+                58
+              </span>
+
+              <span class="stat-subtext">
+                Tenured research & teaching staff
+              </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-teal">🎓</div>
+          </div>
+
+          <!-- ASSISTANT PROFESSORS -->
+          <div class="faculty-stat-card">
+            <div class="stat-info">
+              <span class="stat-label"> Assistant Professors </span>
+
+              <span class="stat-value" style="color: var(--gold)"> 85 </span>
+
+              <span class="stat-subtext">
+                Teaching & academic support staff
+              </span>
+            </div>
+
+            <div class="stat-icon-wrap icon-gold">✓</div>
+          </div>
+        </section>
+
+        <!-- FACULTY TABLE CARD -->
+        <section class="faculty-table-card">
+          <!-- TABLE HEADER -->
+          <div class="faculty-table-header">
+            <div>
+              <h2>Faculty Directory</h2>
+
+              <p>View and manage university academic staff.</p>
+            </div>
+          </div>
+
+          <!-- TABLE -->
+          <div class="faculty-table-wrapper">
+            <table class="faculty-table">
+              <thead>
+                <tr>
+                  <th>Faculty ID</th>
+
+                  <th>Faculty Member</th>
+
+                  <th>Email</th>
+
+                  <th>Department</th>
+
+                  <th>Designation</th>
+
+                  <th>Experience</th>
+
+                  <th>Status</th>
+
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- ROW 1 -->
+                <tr>
+                  <td class="code-cell">FAC-2018-0034</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #eff6ff; color: #1e40af"
+                      >
+                        RS
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Dr. Rajesh Sharma
+                        </span>
+
+                        <span class="faculty-id-sub"> Senior Faculty </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>rajesh.sharma@faculty.apex.edu</td>
+
+                  <td>Computer Science & Eng.</td>
+
+                  <td>
+                    <span class="badge badge-purple"> Professor </span>
+                  </td>
+
+                  <td>18 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 2 -->
+                <tr>
+                  <td class="code-cell">FAC-2020-0051</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #f0fdfa; color: #0f766e"
+                      >
+                        MS
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Dr. Meenakshi Sundaram
+                        </span>
+
+                        <span class="faculty-id-sub"> ECE Department </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>meenakshi.s@faculty.apex.edu</td>
+
+                  <td>Electronics & Comm. Eng.</td>
+
+                  <td>
+                    <span class="badge badge-teal"> Associate Professor </span>
+                  </td>
+
+                  <td>11 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 3 -->
+                <tr>
+                  <td class="code-cell">FAC-2015-0012</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #fff7ed; color: #9a3412"
+                      >
+                        AK
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Prof. Arvind Kulkarni
+                        </span>
+
+                        <span class="faculty-id-sub"> ME Department </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>arvind.k@faculty.apex.edu</td>
+
+                  <td>Mechanical Engineering</td>
+
+                  <td>
+                    <span class="badge badge-purple"> Professor & HOD </span>
+                  </td>
+
+                  <td>21 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 4 -->
+                <tr>
+                  <td class="code-cell">FAC-2019-0068</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #fef3c7; color: #92400e"
+                      >
+                        SV
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Dr. Shalini Verma
+                        </span>
+
+                        <span class="faculty-id-sub"> IT Department </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>shalini.verma@faculty.apex.edu</td>
+
+                  <td>Information Technology</td>
+
+                  <td>
+                    <span class="badge badge-teal"> Associate Professor </span>
+                  </td>
+
+                  <td>9 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 5 -->
+                <tr>
+                  <td class="code-cell">FAC-2016-0023</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #fee2e2; color: #991b1b"
+                      >
+                        TM
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Prof. Tariq Mansoor
+                        </span>
+
+                        <span class="faculty-id-sub"> Civil Engineering </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>tariq.m@faculty.apex.edu</td>
+
+                  <td>Civil Engineering</td>
+
+                  <td>
+                    <span class="badge badge-purple"> Professor </span>
+                  </td>
+
+                  <td>16 Years</td>
+
+                  <td>
+                    <span class="badge badge-onleave"> On Leave </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 6 -->
+                <tr>
+                  <td class="code-cell">FAC-2021-0089</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #f0fdf4; color: #166534"
+                      >
+                        AM
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Dr. Ananya Mukherjee
+                        </span>
+
+                        <span class="faculty-id-sub">
+                          Biotech / Applied Sci
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>ananya.m@faculty.apex.edu</td>
+
+                  <td>Applied Sciences</td>
+
+                  <td>
+                    <span class="badge badge-teal"> Associate Professor </span>
+                  </td>
+
+                  <td>10 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ROW 7 -->
+                <tr>
+                  <td class="code-cell">FAC-2023-0114</td>
+
+                  <td>
+                    <div class="faculty-name-cell">
+                      <div
+                        class="faculty-avatar-badge"
+                        style="background-color: #eff6ff; color: #1e3a8a"
+                      >
+                        SR
+                      </div>
+
+                      <div class="faculty-info-meta">
+                        <span class="faculty-full-name">
+                          Er. Saurabh Rastogi
+                        </span>
+
+                        <span class="faculty-id-sub">
+                          Systems Lab Director
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>saurabh.r@faculty.apex.edu</td>
+
+                  <td>Computer Science & Eng.</td>
+
+                  <td>
+                    <span class="badge badge-primary">
+                      Assistant Professor
+                    </span>
+                  </td>
+
+                  <td>5 Years</td>
+
+                  <td>
+                    <span class="badge badge-active"> Active </span>
+                  </td>
+
+                  <td>
+                    <div class="action-btn-group">
+                      <a
+                        href="faculty-profile.html"
+                        class="action-btn action-btn-view"
+                      >
+                        View
+                      </a>
+
+                      <a href="#edit" class="action-btn action-btn-edit">
+                        Edit
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="pagination-wrap">
+            <div class="pagination-info">
+              Showing <strong>1</strong> to <strong>7</strong> of
+              <strong>185</strong> academic faculty members
+            </div>
+
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a href="#prev" class="page-link"> &laquo; Prev </a>
+              </li>
+
+              <li class="page-item active">
+                <a href="#page-1" class="page-link"> 1 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#page-2" class="page-link"> 2 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#page-3" class="page-link"> 3 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#page-4" class="page-link"> 4 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#page-5" class="page-link"> 5 </a>
+              </li>
+
+              <li class="page-item">
+                <a href="#next" class="page-link"> Next &raquo; </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
