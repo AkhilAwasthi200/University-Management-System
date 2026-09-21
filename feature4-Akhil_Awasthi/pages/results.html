@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results & Academic Performance | Apex Global University UMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/academic.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION (Common across all 4 pages)
+       ========================================================================= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-sub">Academic Module • Member 4</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Core Management</div>
+      
+      <!-- 1. Dashboard -->
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- 2. Students -->
+      <a href="students.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span>Students</span>
+      </a>
+
+      <!-- 3. Faculty -->
+      <a href="faculty.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span>Faculty</span>
+      </a>
+
+      <!-- 4. Departments -->
+      <a href="departments.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span>Departments</span>
+      </a>
+
+      <div class="sidebar-nav-label">Academic Operations</div>
+
+      <!-- 5. Courses -->
+      <a href="courses.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span>Courses</span>
+      </a>
+
+      <!-- 6. Attendance -->
+      <a href="attendance.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </span>
+        <span>Attendance</span>
+      </a>
+
+      <!-- 7. Examination -->
+      <a href="examination.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span>Examination</span>
+      </a>
+
+      <!-- 8. Results (ACTIVE) -->
+      <a href="results.html" class="sidebar-link active">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </span>
+        <span>Results</span>
+      </a>
+
+      <div class="sidebar-nav-label">Preferences</div>
+
+      <!-- 9. Settings -->
+      <a href="#settings" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <span>Settings</span>
+      </a>
+
+      <!-- 10. Logout -->
+      <a href="login.html" class="sidebar-link" style="color: #f87171;">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Enr: 2415000156</span>
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        Active
+      </span>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN WRAPPER & HEADER
+       ========================================================================= -->
+  <div class="dashboard-wrapper">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="text-muted">Academics</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Results</span>
+        </nav>
+        <div class="header-page-title">Results & Academic Performance</div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search Field -->
+        <div class="header-search">
+          <span class="header-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="search" placeholder="Search student ID, score..." aria-label="Search results">
+        </div>
+
+        <!-- Notification Indicator -->
+        <div class="notification-indicator" title="Grading notifications">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">4</span>
+        </div>
+
+        <!-- Administrator Profile -->
+        <div class="admin-profile" title="Member 4 Academic Administrator">
+          <div class="admin-avatar">AA</div>
+          <div class="admin-meta">
+            <span class="admin-name">Dr. Akhil Awasthi</span>
+            <span class="admin-role">Academic Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="academic-main">
+      
+      <!-- Page Title & Description Block -->
+      <div class="page-header-block">
+        <div class="page-title-wrap">
+          <h1>Academic Transcripts & Semester Grade Points</h1>
+          <p>Analyze institutional grading distributions, SGPA scores, credit points, and verified transcript publishing.</p>
+        </div>
+        <div class="page-header-actions">
+          <a href="#print-gazette" class="btn btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Print Results Gazette
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           ACADEMIC PERFORMANCE SUMMARY CARDS (The 4 requested metrics)
+           ===================================================================== -->
+      <div class="academic-stats-grid">
+        
+        <!-- 1. Average SGPA -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Average SGPA</span>
+            <span class="stat-value" style="color: var(--primary);">7.82</span>
+            <span class="stat-subtext">Scale of 10.0 • All branches</span>
+          </div>
+          <div class="stat-icon-wrap icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. Highest SGPA -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Highest SGPA</span>
+            <span class="stat-value" style="color: var(--accent);">9.94</span>
+            <span class="stat-subtext" style="color: var(--accent); font-weight: 700;">University Gold Medalist</span>
+          </div>
+          <div class="stat-icon-wrap icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. Students Passed -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Students Passed</span>
+            <span class="stat-value" style="color: var(--success);">2,318</span>
+            <span class="stat-subtext">Cleared all course credits</span>
+          </div>
+          <div class="stat-icon-wrap icon-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 4. Pass Percentage -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Pass Percentage</span>
+            <span class="stat-value" style="color: var(--primary);">94.6%</span>
+            <span class="stat-subtext" style="color: var(--success); font-weight: 700;">+2.1% vs previous year</span>
+          </div>
+          <div class="stat-icon-wrap icon-teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           SELECTED STUDENT ACADEMIC PROFILE CARD (Requested Component)
+           ===================================================================== -->
+      <div class="student-profile-card">
+        <div class="student-profile-header">
+          <div class="student-profile-identity">
+            <div class="student-profile-avatar">AA</div>
+            <div>
+              <div class="d-flex align-center gap-2">
+                <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.15rem;">Akhil Awasthi</h2>
+                <span class="badge badge-distinction">&#9733; Dean's Honors List</span>
+              </div>
+              <div class="text-xs text-muted">
+                <strong>Enrollment No:</strong> 2415000156 &bull; 
+                <strong>Program:</strong> Bachelor of Technology (Computer Science & Engineering) &bull; 
+                <strong>Semester:</strong> Semester VI
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-success" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">Academic Standing: Outstanding</span>
+          </div>
+        </div>
+
+        <div class="student-metrics-grid">
+          <div class="metric-box">
+            <div class="metric-box-label">Semester SGPA</div>
+            <div class="metric-box-value" style="color: var(--primary);">9.85</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Cumulative CGPA</div>
+            <div class="metric-box-value" style="color: var(--secondary);">9.72</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Earned Credits</div>
+            <div class="metric-box-value" style="color: var(--accent);">142 / 160</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Overall Attendance</div>
+            <div class="metric-box-value" style="color: var(--success);">96.4%</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Degree Classification</div>
+            <div class="metric-box-value" style="font-size: 1rem; color: var(--primary); margin-top: 0.5rem;">First Class with Distinction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           SEARCH & FILTER TOOLBAR (Student, Semester, Course UI)
+           ===================================================================== -->
+      <div class="filter-toolbar">
+        <div class="filter-controls">
+          <!-- Search student UI -->
+          <div class="search-input-wrap">
+            <span class="search-input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" placeholder="Search student name or roll number..." aria-label="Student result search">
+          </div>
+
+          <!-- Semester Filter -->
+          <label for="resultSemFilter" class="sr-only" style="display:none;">Semester</label>
+          <select id="resultSemFilter" class="filter-select" aria-label="Select Semester">
+            <option value="">All Semesters (I - VIII)</option>
+            <option value="1">Semester I</option>
+            <option value="2">Semester II</option>
+            <option value="3">Semester III</option>
+            <option value="4">Semester IV</option>
+            <option value="5">Semester V</option>
+            <option value="6">Semester VI</option>
+            <option value="7">Semester VII</option>
+          </select>
+
+          <!-- Course / Program Filter -->
+          <label for="resultCourseFilter" class="sr-only" style="display:none;">Program</label>
+          <select id="resultCourseFilter" class="filter-select" aria-label="Select Course / Program">
+            <option value="">All Programs (B.Tech, M.Tech...)</option>
+            <option value="CSE">B.Tech Computer Science & Eng.</option>
+            <option value="ECE">B.Tech Electronics & Comm.</option>
+            <option value="ME">B.Tech Mechanical Eng.</option>
+            <option value="IT">B.Tech Information Technology</option>
+            <option value="CE">B.Tech Civil Engineering</option>
+            <option value="BT">B.Sc Biotechnology</option>
+          </select>
+        </div>
+
+        <div>
+          <a href="#reset" class="btn btn-secondary btn-sm">Reset</a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           RESULTS TABLE WITH GRADES & STATUSES
+           ===================================================================== -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <div>
+            <div class="table-card-title">Official Semester Grade Ledger</div>
+            <div class="table-card-subtitle">Verified tabulation register • Academic Term 2026</div>
+          </div>
+          <span class="badge badge-primary">6 Tabulated Records</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Semester</th>
+                <th scope="col" style="text-align: center;">Total Subjects</th>
+                <th scope="col" style="text-align: center;">Marks Obtained</th>
+                <th scope="col" style="text-align: center;">Total Marks</th>
+                <th scope="col" style="text-align: center;">Percentage</th>
+                <th scope="col" style="text-align: center;">SGPA</th>
+                <th scope="col" style="text-align: center;">Grade</th>
+                <th scope="col">Result Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Student 1 -->
+              <tr>
+                <td class="code-cell">2415000156</td>
+                <td class="primary-text-cell">Akhil Awasthi</td>
+                <td>Semester VI</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">582</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--success);">97.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800; color: var(--primary);">9.85</td>
+                <td style="text-align: center;"><span class="badge badge-grade-aplus">A+</span></td>
+                <td><span class="badge badge-distinction">Pass with Distinction</span></td>
+              </tr>
+
+              <!-- Student 2 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0811</td>
+                <td class="primary-text-cell">Aarav Patel</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">534</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">89.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">8.92</td>
+                <td style="text-align: center;"><span class="badge badge-grade-a">A</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+
+              <!-- Student 3 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0812</td>
+                <td class="primary-text-cell">Priya Nair</td>
+                <td>Semester III</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">548</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">91.3%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">9.15</td>
+                <td style="text-align: center;"><span class="badge badge-grade-aplus">A+</span></td>
+                <td><span class="badge badge-distinction">Pass with Distinction</span></td>
+              </tr>
+
+              <!-- Student 4 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0813</td>
+                <td class="primary-text-cell">Rohan Verma</td>
+                <td>Semester VII</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">462</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">77.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">7.68</td>
+                <td style="text-align: center;"><span class="badge badge-grade-bplus">B+</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+
+              <!-- Student 5 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0814</td>
+                <td class="primary-text-cell">Ananya Sharma</td>
+                <td>Semester I</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">408</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">68.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">6.80</td>
+                <td style="text-align: center;"><span class="badge badge-grade-b">B</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+
+              <!-- Student 6 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0817</td>
+                <td class="primary-text-cell">Kabir Mehta</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">328</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--danger);">54.6%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800; color: var(--danger);">5.45</td>
+                <td style="text-align: center;"><span class="badge badge-grade-c">C</span></td>
+                <td><span class="badge badge-warning">Needs Improvement</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
