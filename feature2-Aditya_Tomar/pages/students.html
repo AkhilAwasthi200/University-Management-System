@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management | Apex Global University UMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/student.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION (Common across all 3 pages)
+       ========================================================================= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-sub">Student Module • Member 2</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Core Management</div>
+      
+      <!-- 1. Dashboard -->
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- 2. Students (ACTIVE) -->
+      <a href="students.html" class="sidebar-link active">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span>Students</span>
+      </a>
+
+      <!-- 3. Faculty -->
+      <a href="faculty.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span>Faculty</span>
+      </a>
+
+      <!-- 4. Departments -->
+      <a href="departments.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span>Departments</span>
+      </a>
+
+      <div class="sidebar-nav-label">Academic Operations</div>
+
+      <!-- 5. Courses -->
+      <a href="courses.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span>Courses</span>
+      </a>
+
+      <!-- 6. Attendance -->
+      <a href="attendance.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </span>
+        <span>Attendance</span>
+      </a>
+
+      <!-- 7. Examination -->
+      <a href="examination.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span>Examination</span>
+      </a>
+
+      <!-- 8. Results -->
+      <a href="results.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </span>
+        <span>Results</span>
+      </a>
+
+      <div class="sidebar-nav-label">Account</div>
+
+      <!-- 9. Logout -->
+      <a href="login.html" class="sidebar-link" style="color: #f87171;">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Enr: 2415000121</span>
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        Active
+      </span>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN WRAPPER & HEADER
+       ========================================================================= -->
+  <div class="dashboard-wrapper">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Students</span>
+        </nav>
+        <div class="header-page-title">Student Management</div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search Field -->
+        <div class="header-search">
+          <span class="header-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="search" placeholder="Search student records..." aria-label="Search students">
+        </div>
+
+        <!-- Notification Indicator -->
+        <div class="notification-indicator" title="Student notifications">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">3</span>
+        </div>
+
+        <!-- Administrator Profile -->
+        <div class="admin-profile" title="Member 2 Student Administrator">
+          <div class="admin-avatar">AT</div>
+          <div class="admin-meta">
+            <span class="admin-name">Aditya Tomar</span>
+            <span class="admin-role">Student Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="student-main">
+      
+      <!-- Page Title & Actions Block -->
+      <div class="page-header-block">
+        <div class="page-title-wrap">
+          <h1>Student Management</h1>
+          <p>Administer enrolled student dossiers, department allocations, admission verifications, and academic status.</p>
+        </div>
+        <div class="page-header-actions">
+          <a href="add-student.html" class="btn btn-primary" title="Add New Student">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Add New Student
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           SUMMARY STATS CARDS (4 Requested Cards)
+           ===================================================================== -->
+      <div class="student-stats-grid">
+        
+        <!-- 1. Total Students -->
+        <div class="student-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Total Students</span>
+            <span class="stat-value" style="color: var(--primary);">2,450</span>
+            <span class="stat-subtext">Across all academic programs</span>
+          </div>
+          <div class="stat-icon-wrap icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. Active Students -->
+        <div class="student-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Active Students</span>
+            <span class="stat-value" style="color: var(--success);">2,320</span>
+            <span class="stat-subtext">Currently enrolled & attending</span>
+          </div>
+          <div class="stat-icon-wrap icon-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. New Admissions -->
+        <div class="student-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">New Admissions</span>
+            <span class="stat-value" style="color: var(--accent);">340</span>
+            <span class="stat-subtext">Admitted for Fall 2026</span>
+          </div>
+          <div class="stat-icon-wrap icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <line x1="19" y1="8" x2="19" y2="14"></line>
+              <line x1="16" y1="11" x2="22" y2="11"></line>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 4. Graduated Students -->
+        <div class="student-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Graduated Students</span>
+            <span class="stat-value" style="color: var(--secondary);">1,890</span>
+            <span class="stat-subtext">Alumni degrees conferred</span>
+          </div>
+          <div class="stat-icon-wrap icon-teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           SEARCH & FILTER SECTION
+           ===================================================================== -->
+      <div class="student-filter-card">
+        <div class="student-filter-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          Search & Filter Students
+        </div>
+
+        <div class="student-filter-grid">
+          <!-- Search Student -->
+          <div class="search-input-wrap">
+            <span class="search-input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" placeholder="Search by Student Name, ID, or Email..." aria-label="Search Student">
+          </div>
+
+          <!-- Department Filter -->
+          <select class="filter-select" aria-label="Filter by Department">
+            <option value="">All Departments</option>
+            <option value="CSE">Computer Science & Engineering</option>
+            <option value="ECE">Electronics & Communication</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="CE">Civil Engineering</option>
+            <option value="IT">Information Technology</option>
+            <option value="BT">Biotechnology</option>
+          </select>
+
+          <!-- Year / Semester Filter -->
+          <select class="filter-select" aria-label="Filter by Year or Semester">
+            <option value="">All Years / Semesters</option>
+            <option value="1">1st Year (Sem I - II)</option>
+            <option value="2">2nd Year (Sem III - IV)</option>
+            <option value="3">3rd Year (Sem V - VI)</option>
+            <option value="4">4th Year (Sem VII - VIII)</option>
+          </select>
+
+          <!-- Status Filter -->
+          <select class="filter-select" aria-label="Filter by Status">
+            <option value="">All Statuses</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="new">New Admission</option>
+            <option value="graduated">Graduated</option>
+          </select>
+
+          <!-- Search & Reset Buttons -->
+          <div class="filter-button-group">
+            <a href="#search" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Search
+            </a>
+            <a href="students.html" class="btn btn-secondary btn-sm">Reset</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           STUDENT DATA TABLE
+           ===================================================================== -->
+      <div class="student-table-card">
+        <div class="student-table-header">
+          <div>
+            <div class="student-table-title">Enrolled Students Directory</div>
+            <div class="student-table-subtitle">Official university student register &bull; Academic Year 2026-2027</div>
+          </div>
+          <span class="badge badge-primary">Showing 8 of 2,450 Records</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="student-table">
+            <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Department</th>
+                <th scope="col">Year</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Status</th>
+                <th scope="col" style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Aditya Tomar (Featured Student) -->
+              <tr>
+                <td class="code-cell">2415000121</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #fef3c7; color: #92400e;">AT</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Aditya Tomar</span>
+                      <span class="student-email-sub">Enrollment No. 2415000121</span>
+                    </div>
+                  </div>
+                </td>
+                <td>aditya.tomar@student.apex.edu</td>
+                <td>Computer Science & Eng.</td>
+                <td>3rd Year</td>
+                <td>Semester VI</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0811</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge">AP</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Aarav Patel</span>
+                      <span class="student-email-sub">Enrollment No. 2415000111</span>
+                    </div>
+                  </div>
+                </td>
+                <td>aarav.patel@student.apex.edu</td>
+                <td>Computer Science & Eng.</td>
+                <td>3rd Year</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0812</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #f0fdf4; color: #166534;">PN</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Priya Nair</span>
+                      <span class="student-email-sub">Enrollment No. 2415000112</span>
+                    </div>
+                  </div>
+                </td>
+                <td>priya.nair@student.apex.edu</td>
+                <td>Electronics & Comm.</td>
+                <td>2nd Year</td>
+                <td>Semester III</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0813</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #fff7ed; color: #9a3412;">RV</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Rohan Verma</span>
+                      <span class="student-email-sub">Enrollment No. 2415000113</span>
+                    </div>
+                  </div>
+                </td>
+                <td>rohan.verma@student.apex.edu</td>
+                <td>Mechanical Engineering</td>
+                <td>4th Year</td>
+                <td>Semester VII</td>
+                <td><span class="badge badge-warning">Fee Due</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0814</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #faf5ff; color: #6b21a8;">AS</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Ananya Sharma</span>
+                      <span class="student-email-sub">Enrollment No. 2415000114</span>
+                    </div>
+                  </div>
+                </td>
+                <td>ananya.sharma@student.apex.edu</td>
+                <td>Information Technology</td>
+                <td>1st Year</td>
+                <td>Semester I</td>
+                <td><span class="badge badge-info">New Admission</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0815</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #eff6ff; color: #1e40af;">VS</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Vikram Singh</span>
+                      <span class="student-email-sub">Enrollment No. 2415000115</span>
+                    </div>
+                  </div>
+                </td>
+                <td>vikram.singh@student.apex.edu</td>
+                <td>Civil Engineering</td>
+                <td>3rd Year</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 7 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0816</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #f0fdfa; color: #0f766e;">SK</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Sneha Kulkarni</span>
+                      <span class="student-email-sub">Enrollment No. 2415000116</span>
+                    </div>
+                  </div>
+                </td>
+                <td>sneha.kulkarni@student.apex.edu</td>
+                <td>Biotechnology</td>
+                <td>3rd Year</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 8 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0817</td>
+                <td>
+                  <div class="student-name-cell">
+                    <div class="student-avatar-badge" style="background-color: #fef2f2; color: #991b1b;">KM</div>
+                    <div class="student-info-meta">
+                      <span class="student-full-name">Kabir Mehta</span>
+                      <span class="student-email-sub">Enrollment No. 2415000117</span>
+                    </div>
+                  </div>
+                </td>
+                <td>kabir.mehta@student.apex.edu</td>
+                <td>Computer Science & Eng.</td>
+                <td>3rd Year</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-inactive">Inactive</span></td>
+                <td style="text-align: right;">
+                  <div class="action-btn-group">
+                    <a href="student-profile.html" class="action-btn action-btn-view" title="View Profile">View</a>
+                    <a href="add-student.html" class="action-btn action-btn-edit" title="Edit Student">Edit</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- =====================================================================
+             PAGINATION UI (Requested at bottom)
+             ===================================================================== -->
+        <div class="pagination-wrap">
+          <div class="pagination-info">
+            Showing <strong>1</strong> to <strong>8</strong> of <strong>2,450</strong> registered students
+          </div>
+          <ul class="pagination">
+            <li class="page-item disabled"><a href="#prev" class="page-link" aria-label="Previous">&laquo; Prev</a></li>
+            <li class="page-item active"><a href="#page-1" class="page-link">1</a></li>
+            <li class="page-item"><a href="#page-2" class="page-link">2</a></li>
+            <li class="page-item"><a href="#page-3" class="page-link">3</a></li>
+            <li class="page-item"><a href="#page-4" class="page-link">4</a></li>
+            <li class="page-item"><a href="#page-5" class="page-link">5</a></li>
+            <li class="page-item"><a href="#next" class="page-link" aria-label="Next">Next &raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
