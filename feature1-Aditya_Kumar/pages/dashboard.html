@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | University Management System</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+  <!-- MOBILE SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION
+       ========================================================================= -->
+  <aside class="sidebar" id="appSidebar">
+    
+    <!-- Sidebar Header / University Logo -->
+    <div class="sidebar-header">
+      <img src="../images/logo/logo.svg" alt="UMS Crest" class="sidebar-logo">
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-tag">Member 1 Portal</span>
+      </div>
+    </div>
+
+    <!-- 10 Navigation Items -->
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-title">Core Management</div>
+
+      <!-- 1. Dashboard (Active) -->
+      <a href="dashboard.html" class="sidebar-link active">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- 2. Students (Future Member 2) -->
+      <a href="#students" class="sidebar-link" title="Future Module: Member 2 (students.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span>Students</span>
+      </a>
+
+      <!-- 3. Faculty (Future Member 3) -->
+      <a href="#faculty" class="sidebar-link" title="Future Module: Member 3 (faculty.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span>Faculty</span>
+      </a>
+
+      <!-- 4. Departments (Future Member 3) -->
+      <a href="#departments" class="sidebar-link" title="Future Module: Member 3 (departments.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span>Departments</span>
+      </a>
+
+      <div class="sidebar-nav-title">Academics & Operations</div>
+
+      <!-- 5. Courses (Future Member 4) -->
+      <a href="#courses" class="sidebar-link" title="Future Module: Member 4 (courses.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span>Courses</span>
+      </a>
+
+      <!-- 6. Attendance (Future Member 4) -->
+      <a href="#attendance" class="sidebar-link" title="Future Module: Member 4 (attendance.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </span>
+        <span>Attendance</span>
+      </a>
+
+      <!-- 7. Examination (Future Member 4) -->
+      <a href="#examination" class="sidebar-link" title="Future Module: Member 4 (examination.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span>Examination</span>
+      </a>
+
+      <!-- 8. Results (Future Member 4) -->
+      <a href="#results" class="sidebar-link" title="Future Module: Member 4 (results.html)">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </span>
+        <span>Results</span>
+      </a>
+
+      <div class="sidebar-nav-title">System & Security</div>
+
+      <!-- 9. Settings -->
+      <a href="#settings" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <span>Settings</span>
+      </a>
+
+      <!-- 10. Logout (Links to login.html) -->
+      <a href="login.html" class="sidebar-link" style="color: #f87171;">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+      <div class="d-flex align-center justify-between">
+        <span class="text-xs text-light">Apex UMS v1.0</span>
+        <span class="badge badge-success">Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN DASHBOARD AREA
+       ========================================================================= -->
+  <div class="dashboard-wrapper">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <button type="button" class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Navigation Sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="header-title-group">
+          <h2>Admin Dashboard</h2>
+          <span>Central Executive Administration & Institutional Oversight</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search bar -->
+        <div class="header-search">
+          <span class="header-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" placeholder="Search students, faculty, ID..." aria-label="Search records">
+        </div>
+
+        <!-- Notification Bell -->
+        <button type="button" class="notification-btn" id="notificationBtn" aria-label="View notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">3</span>
+        </button>
+
+        <!-- Admin Profile / Avatar -->
+        <div class="user-profile" title="Member 1 Administrator">
+          <div class="user-avatar">AK</div>
+          <div class="user-meta">
+            <span class="user-name">Dr. Aditya Kumar</span>
+            <span class="user-role">System Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="dashboard-main">
+      
+      <!-- Welcome Greeting -->
+      <div class="dashboard-welcome d-flex justify-between align-center flex-wrap gap-2">
+        <div>
+          <h1>Welcome back, Dr. Aditya Kumar</h1>
+          <p>Academic Year 2026-2027 • Fall Semester Operations Console</p>
+        </div>
+        <div>
+          <a href="../index.html" class="btn btn-outline btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Public Site
+          </a>
+          <a href="login.html" class="btn btn-outline btn-sm" style="color: var(--danger); border-color: var(--danger-border);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Sign Out
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           STATISTICS CARDS (Requested exact counts)
+           ===================================================================== -->
+      <div class="stats-grid">
+        
+        <!-- Total Students: 2,450 -->
+        <div class="stat-card">
+          <div class="stat-card-info">
+            <span class="stat-card-title">Total Students</span>
+            <span class="stat-card-value">2,450</span>
+            <span class="stat-card-trend trend-up">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              +5.4% this semester
+            </span>
+          </div>
+          <div class="stat-card-icon-wrap icon-students">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Total Faculty: 185 -->
+        <div class="stat-card">
+          <div class="stat-card-info">
+            <span class="stat-card-title">Total Faculty</span>
+            <span class="stat-card-value">185</span>
+            <span class="stat-card-trend trend-neutral">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              142 Regular, 43 Adjunct
+            </span>
+          </div>
+          <div class="stat-card-icon-wrap icon-faculty">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Total Courses: 96 -->
+        <div class="stat-card">
+          <div class="stat-card-info">
+            <span class="stat-card-title">Total Courses</span>
+            <span class="stat-card-value">96</span>
+            <span class="stat-card-trend trend-up">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+              8 New electives active
+            </span>
+          </div>
+          <div class="stat-card-icon-wrap icon-courses">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Total Departments: 12 -->
+        <div class="stat-card">
+          <div class="stat-card-info">
+            <span class="stat-card-title">Total Departments</span>
+            <span class="stat-card-value">12</span>
+            <span class="stat-card-trend trend-neutral">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Across 4 Academic Schools
+            </span>
+          </div>
+          <div class="stat-card-icon-wrap icon-departments">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           QUICK ACTIONS (Requested Items)
+           ===================================================================== -->
+      <div class="card quick-actions-card">
+        <div class="card-header">
+          <h3 class="card-title">Quick Administrative Actions</h3>
+          <span class="text-xs text-muted">Direct Shortcuts to Core Functions</span>
+        </div>
+        <div class="card-body">
+          <div class="quick-actions-grid">
+            
+            <!-- 1. Add Student -->
+            <a href="#students" class="quick-action-item" onclick="handleQuickAction('Add Student'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <line x1="19" y1="8" x2="19" y2="14"></line>
+                  <line x1="16" y1="11" x2="22" y2="11"></line>
+                </svg>
+              </div>
+              <span class="quick-action-label">Add Student</span>
+            </a>
+
+            <!-- 2. Add Faculty -->
+            <a href="#faculty" class="quick-action-item" onclick="handleQuickAction('Add Faculty'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <line x1="12" y1="11" x2="12" y2="17"></line>
+                  <line x1="9" y1="14" x2="15" y2="14"></line>
+                </svg>
+              </div>
+              <span class="quick-action-label">Add Faculty</span>
+            </a>
+
+            <!-- 3. Courses -->
+            <a href="#courses" class="quick-action-item" onclick="handleQuickAction('Courses'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              </div>
+              <span class="quick-action-label">Courses</span>
+            </a>
+
+            <!-- 4. Attendance -->
+            <a href="#attendance" class="quick-action-item" onclick="handleQuickAction('Attendance'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+              </div>
+              <span class="quick-action-label">Attendance</span>
+            </a>
+
+            <!-- 5. Examination -->
+            <a href="#examination" class="quick-action-item" onclick="handleQuickAction('Examination'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <span class="quick-action-label">Examination</span>
+            </a>
+
+            <!-- 6. Results -->
+            <a href="#results" class="quick-action-item" onclick="handleQuickAction('Results'); return false;">
+              <div class="quick-action-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <span class="quick-action-label">Results</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           MAIN TWO-COLUMN GRID: RECENT ACTIVITY & ANNOUNCEMENTS
+           ===================================================================== -->
+      <div class="dashboard-content-grid">
+        
+        <!-- LEFT COLUMN: RECENT ACTIVITY -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Recent System Activity</h3>
+            <span class="badge badge-primary">Real-time Feed</span>
+          </div>
+          <div class="card-body">
+            <div class="activity-list">
+              
+              <div class="activity-item">
+                <div class="activity-dot dot-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="activity-details">
+                  <div class="activity-title">New Student Batch Enrolled</div>
+                  <div class="activity-desc">42 undergraduate students admitted to Computer Science & Engineering department for Fall 2026.</div>
+                  <span class="activity-time">18 minutes ago • Registrar Office</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot dot-success">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 11 12 14 22 4"></polyline>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                  </svg>
+                </div>
+                <div class="activity-details">
+                  <div class="activity-title">Mid-Term Grade Submission Completed</div>
+                  <div class="activity-desc">Prof. Rajesh Sharma submitted evaluation grades for Course CS-301 (Data Structures).</div>
+                  <span class="activity-time">45 minutes ago • Academic Cell</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot dot-warning">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <div class="activity-details">
+                  <div class="activity-title">Examination Seating Plan Generated</div>
+                  <div class="activity-desc">Automated seating plan published for Hall B and Hall C (Mid-Term Exams).</div>
+                  <span class="activity-time">2 hours ago • Controller of Exams</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot dot-info">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <div class="activity-details">
+                  <div class="activity-title">Course Curriculum Updated</div>
+                  <div class="activity-desc">Biotechnology department updated syllabus for Course BIO-410 (Applied Genomics).</div>
+                  <span class="activity-time">4 hours ago • Curriculum Board</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: ANNOUNCEMENTS -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Campus Announcements</h3>
+            <span class="badge badge-warning">Official Notices</span>
+          </div>
+          <div class="card-body">
+            <div class="announcement-list">
+              
+              <div class="announcement-item">
+                <div class="announcement-meta">
+                  <span class="announcement-tag text-primary">Academic Council</span>
+                  <span class="announcement-date">Sept 24, 2026</span>
+                </div>
+                <h4 class="announcement-title">Annual Senate & Curriculum Meeting</h4>
+                <p class="announcement-snippet">The 28th Academic Council convening will take place at Senate Auditorium. All Deans and Department Heads are requested to attend.</p>
+              </div>
+
+              <div class="announcement-item" style="border-left-color: var(--accent);">
+                <div class="announcement-meta">
+                  <span class="announcement-tag text-accent">Examination Cell</span>
+                  <span class="announcement-date">Sept 21, 2026</span>
+                </div>
+                <h4 class="announcement-title">Fall 2026 Mid-Semester Timetable</h4>
+                <p class="announcement-snippet">Finalized exam timetables for undergraduate semesters 3, 5, and 7 are now published on the internal notice board.</p>
+              </div>
+
+              <div class="announcement-item" style="border-left-color: var(--success);">
+                <div class="announcement-meta">
+                  <span class="announcement-tag" style="color: var(--success);">Campus ICT</span>
+                  <span class="announcement-date">Sept 19, 2026</span>
+                </div>
+                <h4 class="announcement-title">Server Maintenance Window</h4>
+                <p class="announcement-snippet">Routine cloud database optimization scheduled for Sunday, 02:00 AM to 04:00 AM IST. All core services will remain unaffected.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           COMMON TABLE DEMONSTRATION (Member 1 Reusable Table Foundation)
+           ===================================================================== -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Recent Student Registrations (Common Table Foundation)</h3>
+            <p class="text-xs text-muted" style="margin: 0.2rem 0 0;">Standardized table UI component designed for Member 2, 3 & 4 pages</p>
+          </div>
+          <div class="d-flex gap-2">
+            <span class="badge badge-info">5 Active Entries</span>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Registration ID</th>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-semibold text-primary">UMS-2026-0811</td>
+                <td>
+                  <div class="d-flex align-center gap-2">
+                    <span class="badge" style="background:#e0e7ff; color:#3730a3; width:28px; height:28px; justify-content:center; padding:0;">AP</span>
+                    <div>
+                      <div class="font-semibold">Aarav Patel</div>
+                      <div class="text-xs text-muted">aarav.patel@student.apex.edu</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Computer Science & Engineering</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-success">Enrolled</span></td>
+                <td style="text-align: right;">
+                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0811 (Aarav Patel)');">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="font-semibold text-primary">UMS-2026-0812</td>
+                <td>
+                  <div class="d-flex align-center gap-2">
+                    <span class="badge" style="background:#ccfbf1; color:#115e59; width:28px; height:28px; justify-content:center; padding:0;">PN</span>
+                    <div>
+                      <div class="font-semibold">Priya Nair</div>
+                      <div class="text-xs text-muted">priya.nair@student.apex.edu</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Electronics & Communication</td>
+                <td>Semester III</td>
+                <td><span class="badge badge-success">Enrolled</span></td>
+                <td style="text-align: right;">
+                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0812 (Priya Nair)');">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="font-semibold text-primary">UMS-2026-0813</td>
+                <td>
+                  <div class="d-flex align-center gap-2">
+                    <span class="badge" style="background:#fef3c7; color:#92400e; width:28px; height:28px; justify-content:center; padding:0;">RV</span>
+                    <div>
+                      <div class="font-semibold">Rohan Verma</div>
+                      <div class="text-xs text-muted">rohan.verma@student.apex.edu</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Mechanical Engineering</td>
+                <td>Semester VII</td>
+                <td><span class="badge badge-warning">Fee Pending</span></td>
+                <td style="text-align: right;">
+                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0813 (Rohan Verma)');">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="font-semibold text-primary">UMS-2026-0814</td>
+                <td>
+                  <div class="d-flex align-center gap-2">
+                    <span class="badge" style="background:#ede9fe; color:#5b21b6; width:28px; height:28px; justify-content:center; padding:0;">AS</span>
+                    <div>
+                      <div class="font-semibold">Ananya Sharma</div>
+                      <div class="text-xs text-muted">ananya.sharma@student.apex.edu</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Information Technology</td>
+                <td>Semester I</td>
+                <td><span class="badge badge-info">Newly Admitted</span></td>
+                <td style="text-align: right;">
+                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0814 (Ananya Sharma)');">View</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="font-semibold text-primary">UMS-2026-0815</td>
+                <td>
+                  <div class="d-flex align-center gap-2">
+                    <span class="badge" style="background:#fee2e2; color:#991b1b; width:28px; height:28px; justify-content:center; padding:0;">VS</span>
+                    <div>
+                      <div class="font-semibold">Vikram Singh</div>
+                      <div class="text-xs text-muted">vikram.singh@student.apex.edu</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Civil Engineering</td>
+                <td>Semester V</td>
+                <td><span class="badge badge-success">Enrolled</span></td>
+                <td style="text-align: right;">
+                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0815 (Vikram Singh)');">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- INTERACTION SCRIPTS -->
+  <script>
+    // Responsive Mobile Sidebar Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const appSidebar = document.getElementById('appSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function toggleSidebar() {
+      appSidebar.classList.toggle('show');
+      sidebarOverlay.classList.toggle('show');
+    }
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', toggleSidebar);
+    }
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener('click', toggleSidebar);
+    }
+
+    // Quick Action Handler for Demo
+    function handleQuickAction(actionName) {
+      alert(`[Quick Action: ${actionName}]\nThis feature will connect directly to the corresponding module page once Member 2, 3, or 4 branches are integrated.`);
+    }
+
+    // Notification bell alert
+    const notifBtn = document.getElementById('notificationBtn');
+    if (notifBtn) {
+      notifBtn.addEventListener('click', function() {
+        alert('You have 3 unread campus administrative notices:\n\n1. Annual Senate & Curriculum Meeting (Sept 24)\n2. Fall 2026 Mid-Semester Timetable (Sept 21)\n3. Campus ICT Cloud Maintenance (Sept 19)');
+      });
+    }
+  </script>
+
+</body>
+</html>
