@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Management | Apex Global University UMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/academic.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION (Common across all 4 pages)
+       ========================================================================= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">U</div>
+      <div>
+        <div class="sidebar-brand-name">Apex Global UMS</div>
+        <span class="sidebar-brand-sub">Academic Module • Member 4</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Core Management</div>
+      
+      <!-- 1. Dashboard -->
+      <a href="dashboard.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        </span>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- 2. Students -->
+      <a href="students.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </span>
+        <span>Students</span>
+      </a>
+
+      <!-- 3. Faculty -->
+      <a href="faculty.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span>Faculty</span>
+      </a>
+
+      <!-- 4. Departments -->
+      <a href="departments.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </span>
+        <span>Departments</span>
+      </a>
+
+      <div class="sidebar-nav-label">Academic Operations</div>
+
+      <!-- 5. Courses -->
+      <a href="courses.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </span>
+        <span>Courses</span>
+      </a>
+
+      <!-- 6. Attendance (ACTIVE) -->
+      <a href="attendance.html" class="sidebar-link active">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </span>
+        <span>Attendance</span>
+      </a>
+
+      <!-- 7. Examination -->
+      <a href="examination.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span>Examination</span>
+      </a>
+
+      <!-- 8. Results -->
+      <a href="results.html" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </span>
+        <span>Results</span>
+      </a>
+
+      <div class="sidebar-nav-label">Preferences</div>
+
+      <!-- 9. Settings -->
+      <a href="#settings" class="sidebar-link">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </span>
+        <span>Settings</span>
+      </a>
+
+      <!-- 10. Logout -->
+      <a href="login.html" class="sidebar-link" style="color: #f87171;">
+        <span class="sidebar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </span>
+        <span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Enr: 2415000156</span>
+      <span class="status-indicator">
+        <span class="status-dot"></span>
+        Active
+      </span>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN WRAPPER & HEADER
+       ========================================================================= -->
+  <div class="dashboard-wrapper">
+    
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="text-muted">Academics</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Attendance</span>
+        </nav>
+        <div class="header-page-title">Attendance Management</div>
+      </div>
+
+      <div class="header-right">
+        <!-- Search Field -->
+        <div class="header-search">
+          <span class="header-search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="search" placeholder="Search student ID, roll..." aria-label="Search attendance">
+        </div>
+
+        <!-- Notification Indicator -->
+        <div class="notification-indicator" title="Attendance alerts">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-badge">5</span>
+        </div>
+
+        <!-- Administrator Profile -->
+        <div class="admin-profile" title="Member 4 Academic Administrator">
+          <div class="admin-avatar">AA</div>
+          <div class="admin-meta">
+            <span class="admin-name">Dr. Akhil Awasthi</span>
+            <span class="admin-role">Academic Administrator</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="academic-main">
+      
+      <!-- Page Title & Description Block -->
+      <div class="page-header-block">
+        <div class="page-title-wrap">
+          <h1>Student Attendance & Eligibility Tracking</h1>
+          <p>Monitor class participation metrics, bi-weekly biometric logs, and minimum 75% examination eligibility status.</p>
+        </div>
+        <div class="page-header-actions">
+          <a href="#export" class="btn btn-secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Export Attendance Report
+          </a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           ATTENDANCE OVERVIEW CARDS (The 5 requested metrics)
+           ===================================================================== -->
+      <div class="academic-stats-grid">
+        
+        <!-- 1. Overall Attendance -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Overall Attendance</span>
+            <span class="stat-value" style="color: var(--primary);">84.6%</span>
+            <span class="stat-subtext" style="color: var(--success);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              </svg>
+              Campus-wide average
+            </span>
+          </div>
+          <div class="stat-icon-wrap icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. Present -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Present Students</span>
+            <span class="stat-value" style="color: var(--success);">2,073</span>
+            <span class="stat-subtext">Active in current session</span>
+          </div>
+          <div class="stat-icon-wrap icon-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. Absent -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Absent Students</span>
+            <span class="stat-value" style="color: var(--danger);">377</span>
+            <span class="stat-subtext">Recorded today</span>
+          </div>
+          <div class="stat-icon-wrap icon-red">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 4. Students Below 75% -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Below 75% Threshold</span>
+            <span class="stat-value" style="color: var(--warning);">142</span>
+            <span class="stat-subtext" style="color: var(--danger); font-weight: 600;">At risk of exam debarment</span>
+          </div>
+          <div class="stat-icon-wrap icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 5. Total Classes -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Total Classes</span>
+            <span class="stat-value">1,240</span>
+            <span class="stat-subtext">Lectures & labs delivered</span>
+          </div>
+          <div class="stat-icon-wrap icon-purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           SEARCH & FILTER TOOLBAR (Course, Semester, Date UI)
+           ===================================================================== -->
+      <div class="filter-toolbar">
+        <div class="filter-controls">
+          <!-- Search UI -->
+          <div class="search-input-wrap">
+            <span class="search-input-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" placeholder="Search student name or enrollment ID..." aria-label="Student search">
+          </div>
+
+          <!-- Course Filter -->
+          <label for="courseSelect" class="sr-only" style="display:none;">Course</label>
+          <select id="courseSelect" class="filter-select" aria-label="Filter by course">
+            <option value="">All Courses (CS-301, EC-204...)</option>
+            <option value="CS-301">CS-301 Data Structures</option>
+            <option value="EC-204">EC-204 Signals & Systems</option>
+            <option value="ME-312">ME-312 Thermodynamics</option>
+            <option value="IT-405">IT-405 Cloud Computing</option>
+            <option value="CE-208">CE-208 Structural Mechanics</option>
+            <option value="BT-315">BT-315 Molecular Biology</option>
+          </select>
+
+          <!-- Semester Filter -->
+          <label for="attSemesterSelect" class="sr-only" style="display:none;">Semester</label>
+          <select id="attSemesterSelect" class="filter-select" aria-label="Filter by semester">
+            <option value="">All Semesters</option>
+            <option value="1">Semester I</option>
+            <option value="2">Semester II</option>
+            <option value="3">Semester III</option>
+            <option value="4">Semester IV</option>
+            <option value="5">Semester V</option>
+            <option value="6">Semester VI</option>
+            <option value="7">Semester VII</option>
+          </select>
+
+          <!-- Date Selector UI -->
+          <label for="attendanceDate" class="sr-only" style="display:none;">Attendance Date</label>
+          <input type="date" id="attendanceDate" class="filter-date-input" value="2026-09-17" aria-label="Attendance Session Date">
+        </div>
+
+        <div>
+          <a href="#filter-clear" class="btn btn-secondary btn-sm">Clear Filter</a>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           ATTENDANCE TABLE WITH PROGRESS BARS & STATUS BADGES
+           ===================================================================== -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <div>
+            <div class="table-card-title">Student Attendance Register</div>
+            <div class="table-card-subtitle">Session logs for Fall 2026 academic courses</div>
+          </div>
+          <div class="action-btn-group">
+            <span class="badge badge-success">Good: &ge;75%</span>
+            <span class="badge badge-warning">Warning: 65%-74%</span>
+            <span class="badge badge-danger">Short: &lt;65%</span>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="academic-table">
+            <thead>
+              <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Department</th>
+                <th scope="col">Semester</th>
+                <th scope="col" style="text-align: center;">Total Classes</th>
+                <th scope="col" style="text-align: center;">Present</th>
+                <th scope="col" style="text-align: center;">Absent</th>
+                <th scope="col">Attendance %</th>
+                <th scope="col">Eligibility Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Student 1 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0811</td>
+                <td class="primary-text-cell">Aarav Patel</td>
+                <td>CS-301 Data Structures</td>
+                <td>Computer Science & Eng.</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">48</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--success); font-weight: 700;">45</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">3</td>
+                <td>
+                  <div class="progress-bar-wrap" title="93.8% Attendance">
+                    <div class="progress-bar-fill progress-fill-success" style="width: 93.8%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--success); font-weight: 700;">93.8%</span>
+                </td>
+                <td><span class="badge badge-good-attendance">Good Attendance</span></td>
+              </tr>
+
+              <!-- Student 2 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0812</td>
+                <td class="primary-text-cell">Priya Nair</td>
+                <td>EC-204 Signals & Systems</td>
+                <td>Electronics & Comm.</td>
+                <td>Semester III</td>
+                <td class="numeric-cell" style="text-align: center;">46</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--success); font-weight: 700;">40</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">6</td>
+                <td>
+                  <div class="progress-bar-wrap" title="86.9% Attendance">
+                    <div class="progress-bar-fill progress-fill-success" style="width: 86.9%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--success); font-weight: 700;">86.9%</span>
+                </td>
+                <td><span class="badge badge-good-attendance">Good Attendance</span></td>
+              </tr>
+
+              <!-- Student 3 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0813</td>
+                <td class="primary-text-cell">Rohan Verma</td>
+                <td>ME-312 Thermodynamics</td>
+                <td>Mechanical Engineering</td>
+                <td>Semester VII</td>
+                <td class="numeric-cell" style="text-align: center;">50</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--warning); font-weight: 700;">34</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">16</td>
+                <td>
+                  <div class="progress-bar-wrap" title="68.0% Attendance">
+                    <div class="progress-bar-fill progress-fill-warning" style="width: 68%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--warning); font-weight: 700;">68.0%</span>
+                </td>
+                <td><span class="badge badge-warning-attendance">Warning (68%)</span></td>
+              </tr>
+
+              <!-- Student 4 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0814</td>
+                <td class="primary-text-cell">Ananya Sharma</td>
+                <td>IT-405 Cloud Computing</td>
+                <td>Information Technology</td>
+                <td>Semester I</td>
+                <td class="numeric-cell" style="text-align: center;">42</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger); font-weight: 700;">24</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">18</td>
+                <td>
+                  <div class="progress-bar-wrap" title="57.1% Attendance">
+                    <div class="progress-bar-fill progress-fill-danger" style="width: 57.1%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--danger); font-weight: 700;">57.1%</span>
+                </td>
+                <td><span class="badge badge-short-attendance">Short Attendance</span></td>
+              </tr>
+
+              <!-- Student 5 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0815</td>
+                <td class="primary-text-cell">Vikram Singh</td>
+                <td>CE-208 Structural Analysis</td>
+                <td>Civil Engineering</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">48</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--success); font-weight: 700;">44</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">4</td>
+                <td>
+                  <div class="progress-bar-wrap" title="91.6% Attendance">
+                    <div class="progress-bar-fill progress-fill-success" style="width: 91.6%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--success); font-weight: 700;">91.6%</span>
+                </td>
+                <td><span class="badge badge-good-attendance">Good Attendance</span></td>
+              </tr>
+
+              <!-- Student 6 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0816</td>
+                <td class="primary-text-cell">Sneha Kulkarni</td>
+                <td>BT-315 Molecular Biology</td>
+                <td>Biotechnology</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">44</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--success); font-weight: 700;">41</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">3</td>
+                <td>
+                  <div class="progress-bar-wrap" title="93.1% Attendance">
+                    <div class="progress-bar-fill progress-fill-success" style="width: 93.1%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--success); font-weight: 700;">93.1%</span>
+                </td>
+                <td><span class="badge badge-good-attendance">Good Attendance</span></td>
+              </tr>
+
+              <!-- Student 7 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0817</td>
+                <td class="primary-text-cell">Kabir Mehta</td>
+                <td>CS-301 Data Structures</td>
+                <td>Computer Science & Eng.</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">48</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger); font-weight: 700;">28</td>
+                <td class="numeric-cell" style="text-align: center; color: var(--danger);">20</td>
+                <td>
+                  <div class="progress-bar-wrap" title="58.3% Attendance">
+                    <div class="progress-bar-fill progress-fill-danger" style="width: 58.3%;"></div>
+                  </div>
+                  <span class="numeric-cell" style="color: var(--danger); font-weight: 700;">58.3%</span>
+                </td>
+                <td><span class="badge badge-short-attendance">Short Attendance</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           ATTENDANCE SUMMARY SECTION
+           ===================================================================== -->
+      <div class="summary-rules-card">
+        <div class="summary-rules-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          Institutional Attendance Regulation & Policy Summary
+        </div>
+        <div class="summary-rules-grid">
+          <div class="rule-box">
+            <div class="rule-box-header">
+              <span class="badge badge-success">&ge; 75%</span>
+              Exam Clearance
+            </div>
+            <p>Students with 75% or higher cumulative class and laboratory attendance are unconditionally cleared to appear in Semester Final Examinations.</p>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-box-header">
+              <span class="badge badge-warning">65% - 74%</span>
+              Medical Condonation
+            </div>
+            <p>Students falling between 65% and 74% due to medical conditions must submit certified hospital documents to the Dean of Academic Affairs within 7 days.</p>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-box-header">
+              <span class="badge badge-danger">&lt; 65%</span>
+              Debarment Clause
+            </div>
+            <p>Attendance below 65% results in automatic semester course debarment (Grade 'FA' - Failure due to Attendance). The student must re-register the course.</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>
