@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Examination Management | Apex Global University UMS</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/academic.css">
+  <title>Results & Academic Performance | Apex Global University UMS</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/academic.css">
 </head>
 <body>
 
@@ -97,8 +97,8 @@
         <span>Attendance</span>
       </a>
 
-      <!-- 7. Examination (ACTIVE) -->
-      <a href="examination.html" class="sidebar-link active">
+      <!-- 7. Examination -->
+      <a href="examination.html" class="sidebar-link">
         <span class="sidebar-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -108,8 +108,8 @@
         <span>Examination</span>
       </a>
 
-      <!-- 8. Results -->
-      <a href="results.html" class="sidebar-link">
+      <!-- 8. Results (ACTIVE) -->
+      <a href="results.html" class="sidebar-link active">
         <span class="sidebar-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -166,9 +166,9 @@
           <span class="breadcrumb-separator">/</span>
           <span class="text-muted">Academics</span>
           <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Examination</span>
+          <span class="breadcrumb-current">Results</span>
         </nav>
-        <div class="header-page-title">Examination Management</div>
+        <div class="header-page-title">Results & Academic Performance</div>
       </div>
 
       <div class="header-right">
@@ -180,16 +180,16 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </span>
-          <input type="search" placeholder="Search exams, course codes..." aria-label="Search examinations">
+          <input type="search" placeholder="Search student ID, score..." aria-label="Search results">
         </div>
 
         <!-- Notification Indicator -->
-        <div class="notification-indicator" title="Exam Cell notices">
+        <div class="notification-indicator" title="Grading notifications">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-          <span class="notification-badge">2</span>
+          <span class="notification-badge">4</span>
         </div>
 
         <!-- Administrator Profile -->
@@ -209,82 +209,82 @@
       <!-- Page Title & Description Block -->
       <div class="page-header-block">
         <div class="page-title-wrap">
-          <h1>Examination Timetables & Room Seating Allocation</h1>
-          <p>Supervise semester end-term tests, practical assessments, hall invigilator duties, and schedule publishing.</p>
+          <h1>Academic Transcripts & Semester Grade Points</h1>
+          <p>Analyze institutional grading distributions, SGPA scores, credit points, and verified transcript publishing.</p>
         </div>
         <div class="page-header-actions">
-          <a href="#new-schedule" class="btn btn-primary">
+          <a href="#print-gazette" class="btn btn-secondary">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
             </svg>
-            Publish New Schedule
+            Print Results Gazette
           </a>
         </div>
       </div>
 
       <!-- =====================================================================
-           EXAMINATION STATISTICS CARDS (The 4 requested metrics)
+           ACADEMIC PERFORMANCE SUMMARY CARDS (The 4 requested metrics)
            ===================================================================== -->
       <div class="academic-stats-grid">
         
-        <!-- 1. Upcoming Exams -->
+        <!-- 1. Average SGPA -->
         <div class="academic-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Upcoming Exams</span>
-            <span class="stat-value" style="color: var(--primary);">24</span>
-            <span class="stat-subtext">Scheduled next 2 weeks</span>
+            <span class="stat-label">Average SGPA</span>
+            <span class="stat-value" style="color: var(--primary);">7.82</span>
+            <span class="stat-subtext">Scale of 10.0 • All branches</span>
           </div>
           <div class="stat-icon-wrap icon-blue">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
             </svg>
           </div>
         </div>
 
-        <!-- 2. Completed Exams -->
+        <!-- 2. Highest SGPA -->
         <div class="academic-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Completed Exams</span>
-            <span class="stat-value" style="color: var(--success);">48</span>
-            <span class="stat-subtext">Mid-terms & lab tests evaluated</span>
+            <span class="stat-label">Highest SGPA</span>
+            <span class="stat-value" style="color: var(--accent);">9.94</span>
+            <span class="stat-subtext" style="color: var(--accent); font-weight: 700;">University Gold Medalist</span>
+          </div>
+          <div class="stat-icon-wrap icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. Students Passed -->
+        <div class="academic-stat-card">
+          <div class="stat-info">
+            <span class="stat-label">Students Passed</span>
+            <span class="stat-value" style="color: var(--success);">2,318</span>
+            <span class="stat-subtext">Cleared all course credits</span>
           </div>
           <div class="stat-icon-wrap icon-green">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
         </div>
 
-        <!-- 3. Total Subjects -->
+        <!-- 4. Pass Percentage -->
         <div class="academic-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Total Subjects</span>
-            <span class="stat-value">96</span>
-            <span class="stat-subtext">Undergrad & Postgrad courses</span>
+            <span class="stat-label">Pass Percentage</span>
+            <span class="stat-value" style="color: var(--primary);">94.6%</span>
+            <span class="stat-subtext" style="color: var(--success); font-weight: 700;">+2.1% vs previous year</span>
           </div>
           <div class="stat-icon-wrap icon-teal">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-          </div>
-        </div>
-
-        <!-- 4. Exam Rooms -->
-        <div class="academic-stat-card">
-          <div class="stat-info">
-            <span class="stat-label">Allocated Rooms</span>
-            <span class="stat-value">18</span>
-            <span class="stat-subtext">Halls, auditoriums & computer labs</span>
-          </div>
-          <div class="stat-icon-wrap icon-purple">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
             </svg>
           </div>
         </div>
@@ -292,74 +292,63 @@
       </div>
 
       <!-- =====================================================================
-           UPCOMING EXAMINATION HIGHLIGHT & NOTICES
+           SELECTED STUDENT ACADEMIC PROFILE CARD (Requested Component)
            ===================================================================== -->
-      <div class="highlight-grid">
-        <!-- Highlight Card -->
-        <div class="card spotlight-card">
-          <div class="card-header">
+      <div class="student-profile-card">
+        <div class="student-profile-header">
+          <div class="student-profile-identity">
+            <div class="student-profile-avatar">AA</div>
             <div>
-              <span class="badge badge-primary" style="margin-bottom: 0.35rem;">Major Examination Event</span>
-              <div class="card-title">Fall 2026 End-Semester Examinations (Theory)</div>
+              <div class="d-flex align-center gap-2">
+                <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.15rem;">Akhil Awasthi</h2>
+                <span class="badge badge-distinction">&#9733; Dean's Honors List</span>
+              </div>
+              <div class="text-xs text-muted">
+                <strong>Enrollment No:</strong> 2415000156 &bull; 
+                <strong>Program:</strong> Bachelor of Technology (Computer Science & Engineering) &bull; 
+                <strong>Semester:</strong> Semester VI
+              </div>
             </div>
-            <span class="badge badge-info">Starting Oct 12, 2026</span>
           </div>
-          <div class="card-body">
-            <p style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5;">
-              Centralized university theory assessments for all B.Tech, M.Tech, and B.Sc programs will commence across 18 authorized examination centers. Hall tickets are available for digital download through student dossiers.
-            </p>
-            <div class="spotlight-meta-grid">
-              <div class="spotlight-meta-item">
-                <span class="spotlight-meta-label">Session Windows</span>
-                <span class="spotlight-meta-value">Morning (10 AM) / Afternoon (2 PM)</span>
-              </div>
-              <div class="spotlight-meta-item">
-                <span class="spotlight-meta-label">Chief Controller</span>
-                <span class="spotlight-meta-value">Dr. Akhil Awasthi (Admin)</span>
-              </div>
-              <div class="spotlight-meta-item">
-                <span class="spotlight-meta-label">Enrolled Candidates</span>
-                <span class="spotlight-meta-value">2,308 Eligible Students</span>
-              </div>
-            </div>
+          <div>
+            <span class="badge badge-success" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">Academic Standing: Outstanding</span>
           </div>
         </div>
 
-        <!-- Examination Notices Card -->
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Examination Cell Notices</div>
-            <span class="badge badge-warning">Advisory</span>
+        <div class="student-metrics-grid">
+          <div class="metric-box">
+            <div class="metric-box-label">Semester SGPA</div>
+            <div class="metric-box-value" style="color: var(--primary);">9.85</div>
           </div>
-          <div class="card-body">
-            <div class="notices-list">
-              <div class="notice-item">
-                <div class="notice-item-header">
-                  <span class="notice-tag">Security Protocol</span>
-                  <span class="notice-date">Oct 02, 2026</span>
-                </div>
-                <div class="notice-title">Admit Card & ID Mandate</div>
-                <p class="notice-desc">Entry to examination halls strictly requires verified physical Admit Card and official Student ID card.</p>
-              </div>
 
-              <div class="notice-item" style="border-left-color: var(--danger);">
-                <div class="notice-item-header">
-                  <span class="notice-tag" style="color: var(--danger);">Prohibited Items</span>
-                  <span class="notice-date">Oct 01, 2026</span>
-                </div>
-                <div class="notice-title">Electronics Disallowance</div>
-                <p class="notice-desc">Smart watches, cellular phones, and programmable calculators are strictly banned inside testing centers.</p>
-              </div>
-            </div>
+          <div class="metric-box">
+            <div class="metric-box-label">Cumulative CGPA</div>
+            <div class="metric-box-value" style="color: var(--secondary);">9.72</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Earned Credits</div>
+            <div class="metric-box-value" style="color: var(--accent);">142 / 160</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Overall Attendance</div>
+            <div class="metric-box-value" style="color: var(--success);">96.4%</div>
+          </div>
+
+          <div class="metric-box">
+            <div class="metric-box-label">Degree Classification</div>
+            <div class="metric-box-value" style="font-size: 1rem; color: var(--primary); margin-top: 0.5rem;">First Class with Distinction</div>
           </div>
         </div>
       </div>
 
       <!-- =====================================================================
-           SEARCH & FILTER TOOLBAR
+           SEARCH & FILTER TOOLBAR (Student, Semester, Course UI)
            ===================================================================== -->
       <div class="filter-toolbar">
         <div class="filter-controls">
+          <!-- Search student UI -->
           <div class="search-input-wrap">
             <span class="search-input-icon">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -367,34 +356,32 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
             </span>
-            <input type="text" placeholder="Filter by subject or exam code..." aria-label="Filter timetable">
+            <input type="text" placeholder="Search student name or roll number..." aria-label="Student result search">
           </div>
 
-          <!-- Semester filter -->
-          <label for="examSemFilter" class="sr-only" style="display:none;">Semester</label>
-          <select id="examSemFilter" class="filter-select" aria-label="Select Semester">
-            <option value="">All Semesters</option>
+          <!-- Semester Filter -->
+          <label for="resultSemFilter" class="sr-only" style="display:none;">Semester</label>
+          <select id="resultSemFilter" class="filter-select" aria-label="Select Semester">
+            <option value="">All Semesters (I - VIII)</option>
+            <option value="1">Semester I</option>
+            <option value="2">Semester II</option>
             <option value="3">Semester III</option>
             <option value="4">Semester IV</option>
             <option value="5">Semester V</option>
+            <option value="6">Semester VI</option>
             <option value="7">Semester VII</option>
           </select>
 
-          <!-- Exam Type filter -->
-          <label for="examTypeFilter" class="sr-only" style="display:none;">Exam Type</label>
-          <select id="examTypeFilter" class="filter-select" aria-label="Select Exam Type">
-            <option value="">All Types (Theory / Lab)</option>
-            <option value="theory">Theory Examination</option>
-            <option value="lab">Practical / Viva</option>
-          </select>
-
-          <!-- Status filter -->
-          <label for="examStatusFilter" class="sr-only" style="display:none;">Status</label>
-          <select id="examStatusFilter" class="filter-select" aria-label="Select Status">
-            <option value="">All Statuses</option>
-            <option value="scheduled">Scheduled</option>
-            <option value="completed">Completed</option>
-            <option value="postponed">Postponed</option>
+          <!-- Course / Program Filter -->
+          <label for="resultCourseFilter" class="sr-only" style="display:none;">Program</label>
+          <select id="resultCourseFilter" class="filter-select" aria-label="Select Course / Program">
+            <option value="">All Programs (B.Tech, M.Tech...)</option>
+            <option value="CSE">B.Tech Computer Science & Eng.</option>
+            <option value="ECE">B.Tech Electronics & Comm.</option>
+            <option value="ME">B.Tech Mechanical Eng.</option>
+            <option value="IT">B.Tech Information Technology</option>
+            <option value="CE">B.Tech Civil Engineering</option>
+            <option value="BT">B.Sc Biotechnology</option>
           </select>
         </div>
 
@@ -404,116 +391,116 @@
       </div>
 
       <!-- =====================================================================
-           EXAMINATION TIMETABLE TABLE
+           RESULTS TABLE WITH GRADES & STATUSES
            ===================================================================== -->
       <div class="table-card">
         <div class="table-card-header">
           <div>
-            <div class="table-card-title">Official Examination Timetable</div>
-            <div class="table-card-subtitle">End-Semester Fall 2026 Examination Roster</div>
+            <div class="table-card-title">Official Semester Grade Ledger</div>
+            <div class="table-card-subtitle">Verified tabulation register • Academic Term 2026</div>
           </div>
-          <span class="badge badge-primary">6 Papers Listed</span>
+          <span class="badge badge-primary">6 Tabulated Records</span>
         </div>
 
         <div class="table-responsive">
           <table class="academic-table">
             <thead>
               <tr>
-                <th scope="col">Exam ID</th>
-                <th scope="col">Course Code</th>
-                <th scope="col">Subject Title</th>
-                <th scope="col">Date</th>
-                <th scope="col">Day</th>
-                <th scope="col">Time</th>
-                <th scope="col">Duration</th>
-                <th scope="col">Room</th>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
                 <th scope="col">Semester</th>
-                <th scope="col">Status</th>
+                <th scope="col" style="text-align: center;">Total Subjects</th>
+                <th scope="col" style="text-align: center;">Marks Obtained</th>
+                <th scope="col" style="text-align: center;">Total Marks</th>
+                <th scope="col" style="text-align: center;">Percentage</th>
+                <th scope="col" style="text-align: center;">SGPA</th>
+                <th scope="col" style="text-align: center;">Grade</th>
+                <th scope="col">Result Status</th>
               </tr>
             </thead>
             <tbody>
-              <!-- Paper 1 -->
+              <!-- Student 1 -->
               <tr>
-                <td class="code-cell">EX-2026-101</td>
-                <td class="code-cell">CS-301</td>
-                <td class="primary-text-cell">Data Structures & Algorithms</td>
-                <td>Oct 12, 2026</td>
-                <td>Monday</td>
-                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">Hall A-101</span></td>
+                <td class="code-cell">2415000156</td>
+                <td class="primary-text-cell">Akhil Awasthi</td>
+                <td>Semester VI</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">582</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--success);">97.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800; color: var(--primary);">9.85</td>
+                <td style="text-align: center;"><span class="badge badge-grade-aplus">A+</span></td>
+                <td><span class="badge badge-distinction">Pass with Distinction</span></td>
+              </tr>
+
+              <!-- Student 2 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0811</td>
+                <td class="primary-text-cell">Aarav Patel</td>
+                <td>Semester V</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">534</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">89.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">8.92</td>
+                <td style="text-align: center;"><span class="badge badge-grade-a">A</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
+              </tr>
+
+              <!-- Student 3 -->
+              <tr>
+                <td class="code-cell">UMS-2026-0812</td>
+                <td class="primary-text-cell">Priya Nair</td>
                 <td>Semester III</td>
-                <td><span class="badge badge-scheduled">Scheduled</span></td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">548</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">91.3%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">9.15</td>
+                <td style="text-align: center;"><span class="badge badge-grade-aplus">A+</span></td>
+                <td><span class="badge badge-distinction">Pass with Distinction</span></td>
               </tr>
 
-              <!-- Paper 2 -->
+              <!-- Student 4 -->
               <tr>
-                <td class="code-cell">EX-2026-102</td>
-                <td class="code-cell">EC-204</td>
-                <td class="primary-text-cell">Signals and Linear Systems</td>
-                <td>Oct 13, 2026</td>
-                <td>Tuesday</td>
-                <td class="numeric-cell">02:00 PM - 05:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">Hall B-204</span></td>
-                <td>Semester IV</td>
-                <td><span class="badge badge-scheduled">Scheduled</span></td>
-              </tr>
-
-              <!-- Paper 3 -->
-              <tr>
-                <td class="code-cell">EX-2026-103</td>
-                <td class="code-cell">ME-312</td>
-                <td class="primary-text-cell">Applied Thermodynamics</td>
-                <td>Oct 14, 2026</td>
-                <td>Wednesday</td>
-                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">Hall A-102</span></td>
-                <td>Semester V</td>
-                <td><span class="badge badge-scheduled">Scheduled</span></td>
-              </tr>
-
-              <!-- Paper 4 -->
-              <tr>
-                <td class="code-cell">EX-2026-104</td>
-                <td class="code-cell">CS-482</td>
-                <td class="primary-text-cell">Machine Learning & Neural Nets</td>
-                <td>Oct 15, 2026</td>
-                <td>Thursday</td>
-                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">IT Block 301</span></td>
+                <td class="code-cell">UMS-2026-0813</td>
+                <td class="primary-text-cell">Rohan Verma</td>
                 <td>Semester VII</td>
-                <td><span class="badge badge-scheduled">Scheduled</span></td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">462</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">77.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">7.68</td>
+                <td style="text-align: center;"><span class="badge badge-grade-bplus">B+</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
               </tr>
 
-              <!-- Paper 5 (Postponed Example) -->
+              <!-- Student 5 -->
               <tr>
-                <td class="code-cell">EX-2026-105</td>
-                <td class="code-cell">CE-208</td>
-                <td class="primary-text-cell">Structural Analysis & Mechanics</td>
-                <td>Oct 16, 2026</td>
-                <td>Friday</td>
-                <td class="numeric-cell">02:00 PM - 05:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">Hall C-105</span></td>
-                <td>Semester IV</td>
-                <td><span class="badge badge-postponed">Postponed</span></td>
+                <td class="code-cell">UMS-2026-0814</td>
+                <td class="primary-text-cell">Ananya Sharma</td>
+                <td>Semester I</td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">408</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700;">68.0%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800;">6.80</td>
+                <td style="text-align: center;"><span class="badge badge-grade-b">B</span></td>
+                <td><span class="badge badge-success">Pass</span></td>
               </tr>
 
-              <!-- Paper 6 (Completed Example) -->
+              <!-- Student 6 -->
               <tr>
-                <td class="code-cell">EX-2026-106</td>
-                <td class="code-cell">BT-315</td>
-                <td class="primary-text-cell">Molecular Biology & Genomics</td>
-                <td>Oct 08, 2026</td>
-                <td>Thursday</td>
-                <td class="numeric-cell">10:00 AM - 01:00 PM</td>
-                <td>3 Hours</td>
-                <td><span class="badge badge-neutral">Bio Lab 102</span></td>
+                <td class="code-cell">UMS-2026-0817</td>
+                <td class="primary-text-cell">Kabir Mehta</td>
                 <td>Semester V</td>
-                <td><span class="badge badge-completed">Completed</span></td>
+                <td class="numeric-cell" style="text-align: center;">6</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--primary);">328</td>
+                <td class="numeric-cell" style="text-align: center;">600</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 700; color: var(--danger);">54.6%</td>
+                <td class="numeric-cell" style="text-align: center; font-weight: 800; color: var(--danger);">5.45</td>
+                <td style="text-align: center;"><span class="badge badge-grade-c">C</span></td>
+                <td><span class="badge badge-warning">Needs Improvement</span></td>
               </tr>
             </tbody>
           </table>
