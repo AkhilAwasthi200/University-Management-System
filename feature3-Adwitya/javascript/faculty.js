@@ -62,97 +62,173 @@ if (
   saveData("facultyData", faculty);
 }
 
+// Faculty Pagination
+let currentFacultyPage = 1;
+const facultyPageSize = 5;
+let currentFacultyData = faculty;
+
 // Display faculty records
 function displayFaculty(data = faculty) {
   if (!facultyTable) return;
 
+  currentFacultyData = data;
   facultyTable.innerHTML = "";
 
-  data.forEach((member) => {
-    let index = faculty.indexOf(member);
+  const totalPages = Math.ceil(data.length / facultyPageSize);
 
-    let row = document.createElement("tr");
+  if (currentFacultyPage > totalPages) {
+    currentFacultyPage = Math.max(1, totalPages);
+  }
+
+  const startIndex = (currentFacultyPage - 1) * facultyPageSize;
+  const endIndex = startIndex + facultyPageSize;
+
+  const paginatedData = data.slice(startIndex, endIndex);
+
+  paginatedData.forEach((member) => {
+    const index = faculty.indexOf(member);
+
+    const initials = member.name
+      .trim()
+      .split(/\s+/)
+      .map((part) => part[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
+
+    const row = document.createElement("tr");
 
     row.innerHTML = `
-            <td class="code-cell">${safeText(member.id)}</td>
+      <td class="code-cell">${safeText(member.id)}</td>
 
-            <td>
-                <div class="faculty-name-cell">
-                    <div class="faculty-avatar-badge"
-                         style="background:#eff6ff;color:#1e40af">
-                        ${safeText(initials)}
-                    </div>
+      <td>
+        <div class="faculty-name-cell">
+          <div class="faculty-avatar-badge"
+               style="background:#eff6ff;color:#1e40af">
+            ${safeText(initials)}
+          </div>
 
-                    <div class="faculty-info-meta">
-                        <span class="faculty-full-name">
-                            ${safeText(member.name)}
-                        </span>
-                        <span class="faculty-id-sub">
-                            ${safeText(member.department)}
-                        </span>
-                    </div>
-                </div>
-            </td>
+          <div class="faculty-info-meta">
+            <span class="faculty-full-name">
+              ${safeText(member.name)}
+            </span>
+            <span class="faculty-id-sub">
+              ${safeText(member.department)}
+            </span>
+          </div>
+        </div>
+      </td>
 
-            <td>${safeText(member.email)}</td>
-            <td>${safeText(member.department)}</td>
-            <td><span class="badge badge-purple">
-                ${safeText(member.designation)}
-            </span></td>
-            <td>${safeText(member.experience)}</td>
+      <td>${safeText(member.email)}</td>
+      <td>${safeText(member.department)}</td>
 
-            <td>
-                <span class="badge ${member.status === "Active" ? "badge-active" : "badge-onleave"}">
-                    ${safeText(member.status)}
-                </span>
-            </td>
+      <td>
+        <span class="badge badge-purple">
+          ${safeText(member.designation)}
+        </span>
+      </td>
 
-            <td>
-                <div class="action-btn-group">
-                    <a href="faculty-profile.html?id=${encodeURIComponent(member.id)}"
-                       class="action-btn action-btn-view">
-                        View
-                    </a>
+      <td>${safeText(member.experience)}</td>
 
-                    <button class="action-btn action-btn-edit"
-                            data-action="edit"
-                            data-index="${index}">
-                        Edit
-                    </button>
+      <td>
+        <span class="badge ${
+          member.status === "Active" ? "badge-active" : "badge-onleave"
+        }">
+          ${safeText(member.status)}
+        </span>
+      </td>
 
-                    <button class="action-btn action-btn-edit"
-                            data-action="delete"
-                            data-index="${index}">
-                        Delete
-                    </button>
-                </div>
-            </td>
-        `;
+      <td>
+        <div class="action-btn-group">
+          <a href="faculty-profile.html?id=${encodeURIComponent(member.id)}"
+             class="action-btn action-btn-view">
+            View
+          </a>
+
+          <button class="action-btn action-btn-edit"
+                  data-action="edit"
+                  data-index="${index}">
+            Edit
+          </button>
+
+          <button class="action-btn action-btn-edit"
+                  data-action="delete"
+                  data-index="${index}">
+            Delete
+          </button>
+        </div>
+      </td>
+    `;
 
     facultyTable.appendChild(row);
   });
 
+  renderFacultyPagination(data);
   updateFacultyStats();
+}
+
+// Render faculty pagination
+function renderFacultyPagination(data) {
+  const pagination = document.querySelector(".pagination");
+  const paginationInfo = document.querySelector(".pagination-info");
+
+  if (!pagination || !paginationInfo) return;
+
+  const totalPages = Math.ceil(data.length / facultyPageSize);
+
+  const start =
+    data.length === 0 ? 0 : (currentFacultyPage - 1) * facultyPageSize + 1;
+
+  const end = Math.min(currentFacultyPage * facultyPageSize, data.length);
+
+  paginationInfo.innerHTML = `
+    Showing <strong>${start}</strong> to
+    <strong>${end}</strong> of
+    <strong>${data.length}</strong> academic faculty members
+  `;
+
+  pagination.innerHTML = `
+    <li class="page-item ${currentFacultyPage === 1 ? "disabled" : ""}">
+      <a href="#prev" class="page-link" data-page="prev">&laquo; Prev</a>
+    </li>
+
+    ${Array.from(
+      { length: totalPages },
+      (_, i) => `
+      <li class="page-item ${currentFacultyPage === i + 1 ? "active" : ""}">
+        <a href="#page-${i + 1}" class="page-link" data-page="${i + 1}">
+          ${i + 1}
+        </a>
+      </li>
+    `,
+    ).join("")}
+
+    <li class="page-item ${
+      currentFacultyPage === totalPages || totalPages === 0 ? "disabled" : ""
+    }">
+      <a href="#next" class="page-link" data-page="next">&raquo; Next</a>
+    </li>
+  `;
 }
 
 // Add faculty member
 function addFaculty() {
-  let name = prompt("Enter Faculty Name:");
+  const name = prompt("Enter Faculty Name:");
   if (!name || !name.trim()) return;
 
-  let email = prompt("Enter Faculty Email:");
+  const email = prompt("Enter Faculty Email:");
   if (!email || !email.trim()) return;
 
-  let department = prompt("Enter Department:");
+  const department = prompt("Enter Department:");
   if (!department || !department.trim()) return;
 
-  let designation = prompt("Enter Designation:");
+  const designation = prompt("Enter Designation:");
   if (!designation || !designation.trim()) return;
 
-  let experience = prompt("Enter Experience (Example: 5 Years):");
+  const experience = prompt("Enter Experience (Example: 5 Years):");
   if (!experience || !experience.trim()) return;
 
-  let id = "FAC-" + Date.now();
+  const id = "FAC-" + Date.now();
 
   faculty.push({
     id: id,
@@ -165,6 +241,25 @@ function addFaculty() {
   });
 
   saveData("facultyData", faculty);
+
+  // Update department faculty count
+  const matchedDepartment = departments.find(
+    (dept) => dept.shortName.toLowerCase() === department.trim().toLowerCase(),
+  );
+
+  if (matchedDepartment) {
+    matchedDepartment.faculty = String(
+      faculty.filter(
+        (member) =>
+          member.department.trim().toLowerCase() ===
+          matchedDepartment.shortName.toLowerCase(),
+      ).length,
+    );
+
+    saveData("departmentData", departments);
+  }
+
+  currentFacultyPage = 1;
   displayFaculty();
 
   alert("Faculty added successfully!");
@@ -172,21 +267,23 @@ function addFaculty() {
 
 // Edit faculty member
 function editFaculty(index) {
-  let member = faculty[index];
+  const member = faculty[index];
 
-  let name = prompt("Enter Faculty Name:", member.name);
+  if (!member) return;
+
+  const name = prompt("Enter Faculty Name:", member.name);
   if (!name || !name.trim()) return;
 
-  let email = prompt("Enter Email:", member.email);
+  const email = prompt("Enter Email:", member.email);
   if (!email || !email.trim()) return;
 
-  let department = prompt("Enter Department:", member.department);
+  const department = prompt("Enter Department:", member.department);
   if (!department || !department.trim()) return;
 
-  let designation = prompt("Enter Designation:", member.designation);
+  const designation = prompt("Enter Designation:", member.designation);
   if (!designation || !designation.trim()) return;
 
-  let experience = prompt("Enter Experience:", member.experience);
+  const experience = prompt("Enter Experience:", member.experience);
   if (!experience || !experience.trim()) return;
 
   faculty[index].name = name.trim();
@@ -196,6 +293,20 @@ function editFaculty(index) {
   faculty[index].experience = experience.trim();
 
   saveData("facultyData", faculty);
+
+  // Recalculate faculty count for all departments
+  departments.forEach((dept) => {
+    dept.faculty = String(
+      faculty.filter(
+        (member) =>
+          member.department.trim().toLowerCase() ===
+          dept.shortName.trim().toLowerCase(),
+      ).length,
+    );
+  });
+
+  saveData("departmentData", departments);
+
   displayFaculty();
 
   alert("Faculty updated successfully!");
@@ -203,7 +314,7 @@ function editFaculty(index) {
 
 // Delete faculty member
 function deleteFaculty(index) {
-  let confirmDelete = confirm(
+  const confirmDelete = confirm(
     "Are you sure you want to delete this faculty member?",
   );
 
@@ -211,6 +322,20 @@ function deleteFaculty(index) {
     faculty.splice(index, 1);
 
     saveData("facultyData", faculty);
+
+    // Recalculate faculty count for all departments
+    departments.forEach((dept) => {
+      dept.faculty = String(
+        faculty.filter(
+          (member) =>
+            member.department.trim().toLowerCase() ===
+            dept.shortName.trim().toLowerCase(),
+        ).length,
+      );
+    });
+
+    saveData("departmentData", departments);
+
     displayFaculty();
 
     alert("Faculty deleted successfully!");
@@ -227,21 +352,22 @@ function updateFacultyStats() {
       ?.querySelector("td.code-cell")
       ?.textContent.trim()
       .startsWith("DEP")
-  )
+  ) {
     return;
+  }
 
-  let professors = faculty.filter(
+  const professors = faculty.filter(
     (f) =>
       f.designation.toLowerCase().includes("professor") &&
       !f.designation.toLowerCase().includes("assistant") &&
       !f.designation.toLowerCase().includes("associate"),
   ).length;
 
-  let associate = faculty.filter((f) =>
+  const associate = faculty.filter((f) =>
     f.designation.toLowerCase().includes("associate"),
   ).length;
 
-  let assistant = faculty.filter((f) =>
+  const assistant = faculty.filter((f) =>
     f.designation.toLowerCase().includes("assistant"),
   ).length;
 
@@ -261,12 +387,48 @@ if (
 ) {
   displayFaculty();
 
+  // Faculty pagination click event (attached only once)
+  const pagination = document.querySelector(".pagination");
+
+  if (pagination) {
+    pagination.addEventListener("click", function (event) {
+      const link = event.target.closest("[data-page]");
+
+      if (!link) return;
+
+      event.preventDefault();
+
+      if (link.closest(".page-item")?.classList.contains("disabled")) {
+        return;
+      }
+
+      const page = link.dataset.page;
+      const totalPages = Math.ceil(currentFacultyData.length / facultyPageSize);
+
+      if (page === "next" && currentFacultyPage < totalPages) {
+        currentFacultyPage++;
+      } else if (page === "prev" && currentFacultyPage > 1) {
+        currentFacultyPage--;
+      } else if (
+        !isNaN(Number(page)) &&
+        Number(page) >= 1 &&
+        Number(page) <= totalPages
+      ) {
+        currentFacultyPage = Number(page);
+      } else {
+        return;
+      }
+
+      displayFaculty(currentFacultyData);
+    });
+  }
+
   facultyTable.addEventListener("click", function (event) {
     const button = event.target.closest("button[data-action]");
 
     if (!button) return;
 
-    let index = Number(button.dataset.index);
+    const index = Number(button.dataset.index);
 
     if (button.dataset.action === "edit") {
       editFaculty(index);
@@ -282,9 +444,9 @@ if (
 
   if (searchInput) {
     searchInput.addEventListener("input", function () {
-      let searchValue = this.value.toLowerCase();
+      const searchValue = this.value.toLowerCase();
 
-      let filteredFaculty = faculty.filter(
+      const filteredFaculty = faculty.filter(
         (member) =>
           member.name.toLowerCase().includes(searchValue) ||
           member.email.toLowerCase().includes(searchValue) ||
@@ -292,6 +454,7 @@ if (
           member.id.toLowerCase().includes(searchValue),
       );
 
+      currentFacultyPage = 1;
       displayFaculty(filteredFaculty);
     });
   }
@@ -322,16 +485,21 @@ if (profileHeader) {
 
   if (selectedFaculty) {
     const heading = profileHeader.querySelector("h1");
-    const idElement = profileHeader.querySelector("div div");
 
-    if (heading) heading.textContent = selectedFaculty.name;
+    if (heading) {
+      heading.textContent = selectedFaculty.name;
+    }
 
     const profileText = profileHeader.querySelectorAll("div div");
 
-    if (profileText[0]) profileText[0].textContent = selectedFaculty.id;
+    if (profileText[0]) {
+      profileText[0].textContent = selectedFaculty.id;
+    }
 
-    if (profileHeader.querySelector("p")) {
-      profileHeader.querySelector("p").textContent =
+    const designationText = profileHeader.querySelector("p");
+
+    if (designationText) {
+      designationText.textContent =
         selectedFaculty.designation + " • " + selectedFaculty.department;
     }
 
@@ -351,7 +519,7 @@ if (profileHeader) {
 // DEPARTMENT MANAGEMENT
 // =====================================
 
-let departmentTable = document.querySelector(".faculty-table tbody");
+const departmentTable = document.querySelector(".faculty-table tbody");
 
 let departments = getData("departmentData");
 
@@ -365,7 +533,7 @@ const isDepartmentPage =
 if (isDepartmentPage) {
   if (departments.length === 0) {
     departmentTable.querySelectorAll("tr").forEach((row) => {
-      let cells = row.querySelectorAll("td");
+      const cells = row.querySelectorAll("td");
 
       departments.push({
         id: cells[0].textContent.trim(),
@@ -386,55 +554,55 @@ if (isDepartmentPage) {
   function displayDepartments(data = departments) {
     departmentTable.innerHTML = "";
 
-    data.forEach(department => {
-      let index = departments.indexOf(department);
-      let row = document.createElement("tr");
+    data.forEach((department) => {
+      const index = departments.indexOf(department);
+      const row = document.createElement("tr");
 
       row.innerHTML = `
-                <td class="code-cell">${safeText(department.id)}</td>
+        <td class="code-cell">${safeText(department.id)}</td>
 
-                <td>
-                    <div class="faculty-name-cell">
-                        <div class="faculty-avatar-badge"
-                             style="background:#eff6ff;color:#1d4ed8">
-                            ${safeText(department.shortName)}
-                        </div>
+        <td>
+          <div class="faculty-name-cell">
+            <div class="faculty-avatar-badge"
+                 style="background:#eff6ff;color:#1d4ed8">
+              ${safeText(department.shortName)}
+            </div>
 
-                        <div class="faculty-info-meta">
-                            <span class="faculty-full-name">
-                                ${safeText(department.name)}
-                            </span>
-                            <span class="faculty-id-sub">
-                                ${safeText(department.shortName)}
-                            </span>
-                        </div>
-                    </div>
-                </td>
+            <div class="faculty-info-meta">
+              <span class="faculty-full-name">
+                ${safeText(department.name)}
+              </span>
+              <span class="faculty-id-sub">
+                ${safeText(department.shortName)}
+              </span>
+            </div>
+          </div>
+        </td>
 
-                <td>${safeText(department.hod)}</td>
-                <td>${safeText(department.faculty)}</td>
-                <td>${safeText(department.students)}</td>
-                <td>${safeText(department.courses)}</td>
+        <td>${safeText(department.hod)}</td>
+        <td>${safeText(department.faculty)}</td>
+        <td>${safeText(department.students)}</td>
+        <td>${safeText(department.courses)}</td>
 
-                <td>
-                    <span class="badge badge-active">
-                        ${safeText(department.status)}
-                    </span>
-                </td>
+        <td>
+          <span class="badge badge-active">
+            ${safeText(department.status)}
+          </span>
+        </td>
 
-                <td>
-                    <div class="action-btn-group">
-                        <a href="faculty.html" class="action-btn action-btn-view">
-                            Faculty
-                        </a>
+        <td>
+          <div class="action-btn-group">
+            <a href="faculty.html" class="action-btn action-btn-view">
+              Faculty
+            </a>
 
-                        <button class="action-btn action-btn-edit"
-                                data-department="${index}">
-                            View
-                        </button>
-                    </div>
-                </td>
-            `;
+            <button class="action-btn action-btn-edit"
+                    data-department="${index}">
+              View
+            </button>
+          </div>
+        </td>
+      `;
 
       departmentTable.appendChild(row);
     });
@@ -444,16 +612,16 @@ if (isDepartmentPage) {
 
   // Add new department
   function addDepartment() {
-    let name = prompt("Enter Department Name:");
+    const name = prompt("Enter Department Name:");
     if (!name || !name.trim()) return;
 
-    let shortName = prompt("Enter Department Code:");
+    const shortName = prompt("Enter Department Code:");
     if (!shortName || !shortName.trim()) return;
 
-    let hod = prompt("Enter Head of Department:");
+    const hod = prompt("Enter Head of Department:");
     if (!hod || !hod.trim()) return;
 
-    let id = "DEP-" + String(Date.now()).slice(-6);
+    const id = "DEP-" + String(Date.now()).slice(-6);
 
     departments.push({
       id: id,
@@ -486,9 +654,9 @@ if (isDepartmentPage) {
 
   if (searchInput) {
     searchInput.addEventListener("input", function () {
-      let value = this.value.toLowerCase();
+      const value = this.value.toLowerCase();
 
-      let filtered = departments.filter(
+      const filtered = departments.filter(
         (department) =>
           department.name.toLowerCase().includes(value) ||
           department.shortName.toLowerCase().includes(value) ||
@@ -515,7 +683,9 @@ if (isDepartmentPage) {
 
     if (!button) return;
 
-    let department = departments[Number(button.dataset.department)];
+    const department = departments[Number(button.dataset.department)];
+
+    if (!department) return;
 
     alert(
       "Department: " +
@@ -532,4 +702,26 @@ if (isDepartmentPage) {
   });
 
   displayDepartments();
+}
+
+// Notification Dropdown Functionality
+const notificationBtn = document.getElementById("notificationBtn");
+const notificationDropdown = document.getElementById("notificationDropdown");
+
+if (notificationBtn && notificationDropdown) {
+  notificationBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    notificationDropdown.classList.toggle("show");
+
+    const isOpen = notificationDropdown.classList.contains("show");
+    notificationBtn.setAttribute("aria-expanded", isOpen);
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".notification-wrapper")) {
+      notificationDropdown.classList.remove("show");
+      notificationBtn.setAttribute("aria-expanded", "false");
+    }
+  });
 }
