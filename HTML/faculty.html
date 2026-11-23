@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,159 +6,168 @@
 
     <title>Faculty Management | Apex Global University UMS</title>
 
-    <link rel="stylesheet" href="../CSS/style.css" />
-    <link rel="stylesheet" href="../CSS/faculty.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/faculty.css" />
   </head>
 
   <body>
     <!-- SIDEBAR -->
     <aside class="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-logo">U</div>
+      <div class="sidebar-header">
+        <div class="sidebar-logo">U</div>
 
-    <div>
-      <div class="sidebar-brand-name">Apex Global UMS</div>
-      <span class="sidebar-brand-sub">
-        FACULTY MODULE • MEMBER 3
-      </span>
-    </div>
-  </div>
+        <div>
+          <div class="sidebar-brand-name">Apex Global UMS</div>
+          <span class="sidebar-brand-sub"> Faculty Module ΓÇó Member 3 </span>
+        </div>
+      </div>
 
-  <nav class="sidebar-nav">
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Core Management</div>
 
-    <div class="sidebar-nav-label">CORE MANAGEMENT</div>
+        <a href="dashboard.html" class="sidebar-link">
+          <span class="sidebar-icon">Γûª</span>
+          <span>Dashboard</span>
+        </a>
 
-    <a href="dashboard.html" class="sidebar-link">
-      <span class="sidebar-icon">▦</span>
-      <span>Dashboard</span>
-    </a>
+        <a href="students.html" class="sidebar-link">
+          <span class="sidebar-icon">ΓÖÖ</span>
+          <span>Students</span>
+        </a>
 
-    <a href="students.html" class="sidebar-link">
-      <span class="sidebar-icon">♙</span>
-      <span>Students</span>
-    </a>
+        <a href="faculty.html" class="sidebar-link active">
+          <span class="sidebar-icon">ΓÖÖ</span>
+          <span>Faculty</span>
+        </a>
 
-    <a href="faculty.html" class="sidebar-link active">
-      <span class="sidebar-icon">♟</span>
-      <span>Faculty</span>
-    </a>
+        <a href="departments.html" class="sidebar-link">
+          <span class="sidebar-icon">ΓûÑ</span>
+          <span>Departments</span>
+        </a>
 
-    <a href="departments.html" class="sidebar-link">
-      <span class="sidebar-icon">▥</span>
-      <span>Departments</span>
-    </a>
+        <div class="sidebar-nav-label">Academic Operations</div>
 
-    <div class="sidebar-nav-label">ACADEMIC OPERATIONS</div>
+        <a href="courses.html" class="sidebar-link">
+          <span class="sidebar-icon">Γûñ</span>
+          <span>Courses</span>
+        </a>
 
-    <a href="courses.html" class="sidebar-link">
-      <span class="sidebar-icon">▤</span>
-      <span>Courses</span>
-    </a>
+        <a href="attendance.html" class="sidebar-link">
+          <span class="sidebar-icon">Γ£ô</span>
+          <span>Attendance</span>
+        </a>
 
-    <a href="attendance.html" class="sidebar-link">
-      <span class="sidebar-icon">✓</span>
-      <span>Attendance</span>
-    </a>
+        <a href="examination.html" class="sidebar-link">
+          <span class="sidebar-icon">Γù╖</span>
+          <span>Examination</span>
+        </a>
 
-    <a href="examination.html" class="sidebar-link">
-      <span class="sidebar-icon">◷</span>
-      <span>Examination</span>
-    </a>
+        <a href="results.html" class="sidebar-link">
+          <span class="sidebar-icon">Γîü</span>
+          <span>Results</span>
+        </a>
 
-    <a href="results.html" class="sidebar-link">
-      <span class="sidebar-icon">⌁</span>
-      <span>Results</span>
-    </a>
+        <div class="sidebar-nav-label">Account</div>
 
-    <div class="sidebar-nav-label">ACCOUNT</div>
+        <a href="login.html" class="sidebar-link logout-link">
+          <span class="sidebar-icon">ΓçÑ</span>
+          <span>Logout</span>
+        </a>
+      </nav>
 
-    <a href="login.html" class="sidebar-link logout-link">
-      <span class="sidebar-icon">⇥</span>
-      <span>Logout</span>
-    </a>
+      <div class="sidebar-footer">
+        <span>Enr: 2415000126</span>
 
-  </nav>
-
-  <div class="sidebar-footer">
-    <span>Enr: 2415000126</span>
-
-    <span class="status-indicator">
-      <span class="status-dot"></span>
-      Active
-    </span>
-  </div>
-
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          Active
+        </span>
+      </div>
     </aside>
 
     <!-- MAIN WRAPPER -->
     <div class="dashboard-wrapper">
       <!-- HEADER -->
+      
 <header class="app-header">
-
   <div class="header-left">
-
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="dashboard.html">Dashboard</a>
-
       <span class="breadcrumb-separator">/</span>
-
       <span class="breadcrumb-current">Faculty</span>
     </nav>
 
-    <div class="header-page-title">
-      Faculty Management
-    </div>
-
+    <div class="header-page-title">Faculty Management</div>
   </div>
 
-
   <div class="header-right">
-
     <div class="header-search">
-      <span class="header-search-icon">⌕</span>
-
+      <span class="header-search-icon">Γîò</span>
       <input
         type="search"
         placeholder="Search faculty records..."
-        aria-label="Search faculty records"
+        aria-label="Search faculty"
       />
     </div>
 
-
     <!-- NOTIFICATION -->
-    <div class="notification-indicator" title="Student notifications">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-          <span class="notification-badge">3</span>
+    <div class="notification-wrapper">
+      <button
+        class="notification-indicator"
+        id="notificationBtn"
+        type="button"
+        title="Faculty notifications"
+        aria-label="Open notifications"
+        aria-expanded="false"
+      >
+        ≡ƒöö
+        <span class="notification-badge">3</span>
+      </button>
+
+      <div class="notification-dropdown" id="notificationDropdown">
+        <div class="notification-heading">
+          <strong>Notifications</strong>
+          <span>3 New</span>
         </div>
 
+        <div class="notification-item">
+          <span class="notification-dot"></span>
+          <div>
+            <strong>Faculty Directory</strong>
+            <p>Faculty records are available for review.</p>
+          </div>
+        </div>
 
-    <!-- ADMIN PROFILE -->
-    <div class="admin-profile">
+        <div class="notification-item">
+          <span class="notification-dot"></span>
+          <div>
+            <strong>Department Updates</strong>
+            <p>Check the latest department information.</p>
+          </div>
+        </div>
 
-      <div class="admin-avatar">
-        AD
+        <div class="notification-item">
+          <span class="notification-dot"></span>
+          <div>
+            <strong>Faculty Management</strong>
+            <p>Manage faculty details from the directory.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="admin-meta">
-
-        <span class="admin-name">
-          Adwitiya
-        </span>
-
-        <span class="admin-role">
-          Faculty Administrator
-        </span>
-
-      </div>
-
     </div>
 
-  </div>
+    <!-- ADMIN PROFILE -->
+    <div class="admin-profile" title="Member 3 Faculty Administrator">
+      <div class="admin-avatar">AD</div>
 
+      <div class="admin-meta">
+        <span class="admin-name">Dr. Adwitiya</span>
+        <span class="admin-role">Faculty Administrator</span>
+      </div>
+    </div>
+  </div>
 </header>
+
 
       <!-- MAIN CONTENT -->
       <main class="faculty-main">
@@ -198,7 +207,7 @@
               <span class="stat-subtext"> Across 12 academic departments </span>
             </div>
 
-            <div class="stat-icon-wrap icon-blue">👥</div>
+            <div class="stat-icon-wrap icon-blue">≡ƒæÑ</div>
           </div>
 
           <!-- PROFESSORS -->
@@ -213,7 +222,7 @@
               </span>
             </div>
 
-            <div class="stat-icon-wrap icon-purple">★</div>
+            <div class="stat-icon-wrap icon-purple">Γÿà</div>
           </div>
 
           <!-- ASSOCIATE PROFESSORS -->
@@ -230,7 +239,7 @@
               </span>
             </div>
 
-            <div class="stat-icon-wrap icon-teal">🎓</div>
+            <div class="stat-icon-wrap icon-teal">≡ƒÄô</div>
           </div>
 
           <!-- ASSISTANT PROFESSORS -->
@@ -245,7 +254,7 @@
               </span>
             </div>
 
-            <div class="stat-icon-wrap icon-gold">✓</div>
+            <div class="stat-icon-wrap icon-gold">Γ£ô</div>
           </div>
         </section>
 
@@ -324,7 +333,7 @@
                   <td>
                     <div class="action-btn-group">
                       <a
-                        href="./faculty-profile.html"
+                        href="faculty-profile.html"
                         class="action-btn action-btn-view"
                       >
                         View
@@ -704,5 +713,6 @@
         </section>
       </main>
     </div>
+    <script src="../javascript/faculty.js"></script>
   </body>
 </html>
