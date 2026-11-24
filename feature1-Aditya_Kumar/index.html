@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Management System | Apex Global University</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Landing page specific layout enhancements */
+    .hero-section {
+      padding: 5rem 0 4rem;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #172554 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, rgba(217, 119, 6, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+      color: #fde68a;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge-pulse {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: var(--radius-full);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats-bar {
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-stats-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .hero-stat-item {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border-color);
+      padding-right: 1.5rem;
+    }
+
+    .hero-stat-item:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .hero-stat-num {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .hero-stat-label {
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .modules-section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .module-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+    }
+
+    .module-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .module-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background-color: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .module-badge {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .public-footer {
+      background-color: #0f172a;
+      color: #94a3b8;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: var(--font-size-sm);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand-title {
+      color: #ffffff;
+      font-size: var(--font-size-md);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col h5 {
+      color: #ffffff;
+      font-size: var(--font-size-sm);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: #94a3b8;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: var(--font-size-xs);
+    }
+
+    @media (max-width: 992px) {
+      .hero-title { font-size: 2.25rem; }
+      .hero-stats-card { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .hero-stat-item:nth-child(2) { border-right: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-stats-card { grid-template-columns: 1fr; }
+      .hero-stat-item { border-right: none; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+      .hero-stat-item:last-child { border-bottom: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PUBLIC NAVBAR -->
+  <header class="public-navbar">
+    <div class="container public-navbar-container">
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo/logo.svg" alt="Apex Global University UMS Logo">
+        <div>
+          <div class="nav-brand-title">University Management System</div>
+          <div class="nav-brand-sub">Apex Global University • Academic Portal</div>
+        </div>
+      </a>
+
+      <nav class="public-nav-links">
+        <a href="#overview" class="public-nav-link">Overview</a>
+        <a href="#modules" class="public-nav-link">Modules</a>
+        <a href="#statistics" class="public-nav-link">Statistics</a>
+        <a href="#contact" class="public-nav-link">Helpdesk</a>
+      </nav>
+
+      <div>
+        <a href="pages/login.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          Admin Login
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="overview">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse"></span>
+          Fall 2026 Academic Session Active
+        </div>
+        <h1 class="hero-title">University Management System</h1>
+        <p class="hero-desc">
+          Welcome to Apex Global University's unified administrative and academic management portal. 
+          Seamlessly orchestrating student enrollments, faculty operations, examination cycles, and institutional governance with enterprise-grade reliability.
+        </p>
+        <div class="hero-cta-group">
+          <a href="pages/login.html" class="btn btn-accent btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Access Admin Portal
+          </a>
+          <a href="#modules" class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            Explore System Modules
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO STATS BAR (Requested Metrics) -->
+  <div class="container hero-stats-bar" id="statistics">
+    <div class="hero-stats-card">
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">2,450</div>
+        <div class="hero-stat-label">Total Enrolled Students</div>
+        <p class="text-xs text-muted mt-1" style="margin-bottom:0;">Undergraduate & Postgraduate</p>
+      </div>
+
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">185</div>
+        <div class="hero-stat-label">Total Faculty Members</div>
+        <p class="text-xs text-muted mt-1" style="margin-bottom:0;">Full-time & Adjunct Professors</p>
+      </div>
+
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">96</div>
+        <div class="hero-stat-label">Accredited Courses</div>
+        <p class="text-xs text-muted mt-1" style="margin-bottom:0;">Curriculum Programs Offered</p>
+      </div>
+
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">Academic Departments</div>
+        <p class="text-xs text-muted mt-1" style="margin-bottom:0;">Faculties & Research Centers</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULES SECTION -->
+  <section class="modules-section" id="modules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Modular Architecture</span>
+        <h2 class="section-title">Core University Systems</h2>
+        <p class="text-muted">A fully integrated architecture designed for institutional scalability, precision record keeping, and seamless multi-department coordination.</p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- Module 1 (Member 1) -->
+        <div class="module-card">
+          <div class="module-icon-wrap" style="background-color: #eff6ff; color: #1e3a8a;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <h3>Admin & Common UI</h3>
+          <p class="text-sm text-muted">Central executive command, responsive design system, system metrics, secure administrative login, and global dashboard.</p>
+          <div class="module-badge">
+            <span class="badge badge-primary">Member 1 Module</span>
+            <a href="pages/login.html" class="btn btn-outline btn-sm">Launch Portal &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Module 2 (Member 2) -->
+        <div class="module-card">
+          <div class="module-icon-wrap" style="background-color: #f0fdfa; color: #0f766e;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Student Management</h3>
+          <p class="text-sm text-muted">Student enrollment records, individual student dossiers, admissions registry, and academic progression tracking.</p>
+          <div class="module-badge">
+            <span class="badge badge-info">Member 2 Module</span>
+            <span class="text-xs text-muted">Planned Component</span>
+          </div>
+        </div>
+
+        <!-- Module 3 (Member 3) -->
+        <div class="module-card">
+          <div class="module-icon-wrap" style="background-color: #fffbeb; color: #d97706;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3>Faculty & Departments</h3>
+          <p class="text-sm text-muted">Academic faculty rosters, department hierarchies, teaching appointments, and faculty profile management.</p>
+          <div class="module-badge">
+            <span class="badge badge-warning">Member 3 Module</span>
+            <span class="text-xs text-muted">Planned Component</span>
+          </div>
+        </div>
+
+        <!-- Module 4 (Member 4) -->
+        <div class="module-card">
+          <div class="module-icon-wrap" style="background-color: #faf5ff; color: #7c3aed;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3>Academics & Exams</h3>
+          <p class="text-sm text-muted">Course catalogs, biometric/digital attendance, semester examinations, and verified transcript publishing.</p>
+          <div class="module-badge">
+            <span class="badge badge-success">Member 4 Module</span>
+            <span class="text-xs text-muted">Planned Component</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="public-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="d-flex align-center gap-2 mb-2">
+            <img src="images/logo/logo.svg" alt="Apex Global University Logo" style="width: 38px; height: 38px;">
+            <div class="footer-brand-title">Apex Global University</div>
+          </div>
+          <p class="text-sm text-muted" style="max-width: 320px;">
+            Accredited Institution of Higher Learning. Dedicated to excellence in science, technology, arts, and professional studies.
+          </p>
+          <p class="text-xs text-muted">Campus ICT Center, Administration Block, Building A</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Portal Navigation</h5>
+          <ul>
+            <li><a href="index.html">Portal Home</a></li>
+            <li><a href="pages/login.html">Administrative Login</a></li>
+            <li><a href="#statistics">Institutional Facts</a></li>
+            <li><a href="#modules">Academic Modules</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Academic Services</h5>
+          <ul>
+            <li><a href="pages/login.html">Faculty Directory</a></li>
+            <li><a href="pages/login.html">Course Catalog</a></li>
+            <li><a href="pages/login.html">Exam Schedules</a></li>
+            <li><a href="pages/login.html">Official Records</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support & Security</h5>
+          <ul>
+            <li><a href="pages/login.html">IT Help Desk</a></li>
+            <li><a href="pages/login.html">System Status</a></li>
+            <li><a href="pages/login.html">Privacy Policy</a></li>
+            <li><a href="pages/login.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Apex Global University. All rights reserved. University Management System (UMS) v1.0.</div>
+        <div class="d-flex gap-3">
+          <span class="text-xs text-muted">Member 1 Release: Aditya Kumar</span>
+          <a href="pages/login.html" class="text-accent text-xs font-semibold">Staff Sign In &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
