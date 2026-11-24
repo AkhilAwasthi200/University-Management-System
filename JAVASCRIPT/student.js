@@ -1,11 +1,6 @@
 ﻿/* =============================================================================
    student.js  -  Apex Global University UMS  |  Student Module
    Works with: add-student.html, students.html, student-profile.html
-
-   Data is saved in the browser (localStorage), so no backend is needed.
-   - add-student.html     : add a new student, or edit one  (?id=STUDENT_ID)
-   - students.html        : list, search, filter, paginate, delete
-   - student-profile.html : show one student                (?id=STUDENT_ID)
    ============================================================================= */
 (function () {
   'use strict';
