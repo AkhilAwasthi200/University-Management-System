@@ -16,7 +16,7 @@
        SIDEBAR NAVIGATION
        ========================================================================= -->
   <aside class="sidebar" id="appSidebar">
-    
+
     <!-- Sidebar Header / University Logo -->
     <div class="sidebar-header">
       <img src="../images/logo/logo.svg" alt="UMS Crest" class="sidebar-logo">
@@ -163,11 +163,11 @@
        MAIN DASHBOARD AREA
        ========================================================================= -->
   <div class="dashboard-wrapper">
-    
+
     <!-- HEADER -->
     <header class="app-header">
       <div class="header-left">
-        <button type="button" class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Navigation Sidebar">
+        <button type="button" class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Navigation Sidebar" aria-controls="appSidebar" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -189,7 +189,7 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </span>
-          <input type="text" placeholder="Search students, faculty, ID..." aria-label="Search records">
+          <input type="search" id="recordSearch" placeholder="Search student registrations..." aria-label="Search student registrations" aria-controls="studentRegistrations">
         </div>
 
         <!-- Notification Bell -->
@@ -214,7 +214,7 @@
 
     <!-- CONTENT BODY -->
     <main class="dashboard-main">
-      
+
       <!-- Welcome Greeting -->
       <div class="dashboard-welcome d-flex justify-between align-center flex-wrap gap-2">
         <div>
@@ -244,7 +244,7 @@
            STATISTICS CARDS (Requested exact counts)
            ===================================================================== -->
       <div class="stats-grid">
-        
+
         <!-- Total Students: 2,450 -->
         <div class="stat-card">
           <div class="stat-card-info">
@@ -343,9 +343,9 @@
         </div>
         <div class="card-body">
           <div class="quick-actions-grid">
-            
+
             <!-- 1. Add Student -->
-            <a href="#students" class="quick-action-item" onclick="handleQuickAction('Add Student'); return false;">
+            <a href="#students" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -358,7 +358,7 @@
             </a>
 
             <!-- 2. Add Faculty -->
-            <a href="#faculty" class="quick-action-item" onclick="handleQuickAction('Add Faculty'); return false;">
+            <a href="#faculty" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -371,7 +371,7 @@
             </a>
 
             <!-- 3. Courses -->
-            <a href="#courses" class="quick-action-item" onclick="handleQuickAction('Courses'); return false;">
+            <a href="#courses" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -382,7 +382,7 @@
             </a>
 
             <!-- 4. Attendance -->
-            <a href="#attendance" class="quick-action-item" onclick="handleQuickAction('Attendance'); return false;">
+            <a href="#attendance" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 11l3 3L22 4"></path>
@@ -393,7 +393,7 @@
             </a>
 
             <!-- 5. Examination -->
-            <a href="#examination" class="quick-action-item" onclick="handleQuickAction('Examination'); return false;">
+            <a href="#examination" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -404,7 +404,7 @@
             </a>
 
             <!-- 6. Results -->
-            <a href="#results" class="quick-action-item" onclick="handleQuickAction('Results'); return false;">
+            <a href="#results" class="quick-action-item">
               <div class="quick-action-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
@@ -421,7 +421,7 @@
            MAIN TWO-COLUMN GRID: RECENT ACTIVITY & ANNOUNCEMENTS
            ===================================================================== -->
       <div class="dashboard-content-grid">
-        
+
         <!-- LEFT COLUMN: RECENT ACTIVITY -->
         <div class="card">
           <div class="card-header">
@@ -430,7 +430,7 @@
           </div>
           <div class="card-body">
             <div class="activity-list">
-              
+
               <div class="activity-item">
                 <div class="activity-dot dot-primary">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -500,7 +500,7 @@
           </div>
           <div class="card-body">
             <div class="announcement-list">
-              
+
               <div class="announcement-item">
                 <div class="announcement-meta">
                   <span class="announcement-tag text-primary">Academic Council</span>
@@ -544,12 +544,12 @@
             <p class="text-xs text-muted" style="margin: 0.2rem 0 0;">Standardized table UI component designed for Member 2, 3 & 4 pages</p>
           </div>
           <div class="d-flex gap-2">
-            <span class="badge badge-info">5 Active Entries</span>
+            <span class="badge badge-info" id="registrationCount" role="status">5 Active Entries</span>
           </div>
         </div>
 
         <div class="table-responsive">
-          <table class="table table-hover table-striped">
+          <table class="table table-hover table-striped" id="studentRegistrations">
             <thead>
               <tr>
                 <th>Registration ID</th>
@@ -576,7 +576,7 @@
                 <td>Semester V</td>
                 <td><span class="badge badge-success">Enrolled</span></td>
                 <td style="text-align: right;">
-                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0811 (Aarav Patel)');">View</button>
+                  <button class="btn btn-outline btn-sm">View</button>
                 </td>
               </tr>
 
@@ -595,7 +595,7 @@
                 <td>Semester III</td>
                 <td><span class="badge badge-success">Enrolled</span></td>
                 <td style="text-align: right;">
-                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0812 (Priya Nair)');">View</button>
+                  <button class="btn btn-outline btn-sm">View</button>
                 </td>
               </tr>
 
@@ -614,7 +614,7 @@
                 <td>Semester VII</td>
                 <td><span class="badge badge-warning">Fee Pending</span></td>
                 <td style="text-align: right;">
-                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0813 (Rohan Verma)');">View</button>
+                  <button class="btn btn-outline btn-sm">View</button>
                 </td>
               </tr>
 
@@ -633,7 +633,7 @@
                 <td>Semester I</td>
                 <td><span class="badge badge-info">Newly Admitted</span></td>
                 <td style="text-align: right;">
-                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0814 (Ananya Sharma)');">View</button>
+                  <button class="btn btn-outline btn-sm">View</button>
                 </td>
               </tr>
 
@@ -652,49 +652,19 @@
                 <td>Semester V</td>
                 <td><span class="badge badge-success">Enrolled</span></td>
                 <td style="text-align: right;">
-                  <button class="btn btn-outline btn-sm" onclick="alert('Viewing record UMS-2026-0815 (Vikram Singh)');">View</button>
+                  <button class="btn btn-outline btn-sm">View</button>
                 </td>
               </tr>
             </tbody>
           </table>
+          <p id="noSearchResults" class="text-muted" hidden>No student registrations match your search.</p>
         </div>
       </div>
 
     </main>
   </div>
 
-  <!-- INTERACTION SCRIPTS -->
-  <script>
-    // Responsive Mobile Sidebar Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const appSidebar = document.getElementById('appSidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-    function toggleSidebar() {
-      appSidebar.classList.toggle('show');
-      sidebarOverlay.classList.toggle('show');
-    }
-
-    if (menuToggle) {
-      menuToggle.addEventListener('click', toggleSidebar);
-    }
-    if (sidebarOverlay) {
-      sidebarOverlay.addEventListener('click', toggleSidebar);
-    }
-
-    // Quick Action Handler for Demo
-    function handleQuickAction(actionName) {
-      alert(`[Quick Action: ${actionName}]\nThis feature will connect directly to the corresponding module page once Member 2, 3, or 4 branches are integrated.`);
-    }
-
-    // Notification bell alert
-    const notifBtn = document.getElementById('notificationBtn');
-    if (notifBtn) {
-      notifBtn.addEventListener('click', function() {
-        alert('You have 3 unread campus administrative notices:\n\n1. Annual Senate & Curriculum Meeting (Sept 24)\n2. Fall 2026 Mid-Semester Timetable (Sept 21)\n3. Campus ICT Cloud Maintenance (Sept 19)');
-      });
-    }
-  </script>
+  <script src="../js/dashboard.js" defer></script>
 
 </body>
 </html>
