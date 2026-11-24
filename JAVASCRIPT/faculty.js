@@ -1,7 +1,4 @@
-﻿// =====================================
-// APEX GLOBAL UNIVERSITY - FACULTY MODULE
-// =====================================
-
+﻿
 // Get data from LocalStorage
 function getData(key) {
   return JSON.parse(localStorage.getItem(key)) || [];
