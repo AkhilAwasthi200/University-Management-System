@@ -169,7 +169,7 @@
 
   <div class="login-container">
     <div class="login-card">
-      
+
       <!-- LOGO & BRAND HEADER -->
       <div class="login-card-header">
         <img src="images/logo/logo.svg" alt="Apex Global University UMS Logo" class="login-logo">
@@ -180,8 +180,9 @@
 
       <!-- FORM -->
       <div class="login-card-body">
-        <form action="dashboard.html" method="get" id="adminLoginForm">
-          
+        <noscript><p class="text-sm">JavaScript is required to open this demo dashboard. Do not enter real credentials.</p></noscript>
+        <form action="dashboard.html" method="post" id="adminLoginForm">
+
           <!-- Email / Username Field -->
           <div class="form-group">
             <label for="username" class="form-label">Email or Administrative ID</label>
@@ -192,13 +193,13 @@
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
               </span>
-              <input 
-                type="text" 
-                id="username" 
-                name="username" 
-                class="form-control input-with-icon" 
-                placeholder="admin@apex.edu or ADM-2026-01" 
-                value="admin@apex.edu" 
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control input-with-icon"
+                placeholder="admin@apex.edu or ADM-2026-01"
+                value="admin@apex.edu"
                 required
                 autocomplete="username"
               >
@@ -215,17 +216,17 @@
                   <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
               </span>
-              <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                class="form-control input-with-icon" 
-                placeholder="Enter your password" 
-                value="adminPass2026!" 
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control input-with-icon"
+                placeholder="Enter your password"
+                value="adminPass2026!"
                 required
                 autocomplete="current-password"
               >
-              <button type="button" class="password-toggle" id="togglePasswordBtn" aria-label="Toggle password visibility">
+              <button type="button" class="password-toggle" id="togglePasswordBtn" aria-label="Show password" aria-pressed="false" aria-controls="password">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                   <circle cx="12" cy="12" r="3"></circle>
@@ -237,10 +238,10 @@
           <!-- Remember Me & Forgot Password -->
           <div class="form-options">
             <label class="form-check" for="rememberMe">
-              <input type="checkbox" id="rememberMe" name="remember" class="form-check-input" checked>
-              <span>Remember this workstation</span>
+              <input type="checkbox" id="rememberMe" name="remember" class="form-check-input">
+              <span>Remember my username</span>
             </label>
-            <a href="#" class="forgot-link" onclick="alert('Please contact Campus IT Services (it-support@apex.edu or Ext. 4401) for password reset assistance.'); return false;">
+            <a href="#" class="forgot-link" id="forgotPasswordLink">
               Forgot Password?
             </a>
           </div>
@@ -263,7 +264,7 @@
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
             <div>
-              <strong>Static Demo Mode:</strong> Default admin credentials are pre-filled. Click <em>Sign In to Dashboard</em> to view the live Admin Dashboard.
+              <strong>Static Demo Mode:</strong> Example credentials are pre-filled. Any non-empty credentials open the demo dashboard; no authentication is performed. Only your username can be remembered, never your password.
             </div>
           </div>
 
@@ -284,27 +285,7 @@
     </div>
   </div>
 
-  <script>
-    // Pure frontend toggle password visibility script
-    const toggleBtn = document.getElementById('togglePasswordBtn');
-    const pwdInput = document.getElementById('password');
-
-    if (toggleBtn && pwdInput) {
-      toggleBtn.addEventListener('click', function() {
-        const isPassword = pwdInput.getAttribute('type') === 'password';
-        pwdInput.setAttribute('type', isPassword ? 'text' : 'password');
-      });
-    }
-
-    // Direct submit handler ensures clean static navigation to dashboard
-    const loginForm = document.getElementById('adminLoginForm');
-    if (loginForm) {
-      loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        window.location.href = 'dashboard.html';
-      });
-    }
-  </script>
+  <script src="../JAVASCRIPT/login.js" defer></script>
 
 </body>
 </html>
