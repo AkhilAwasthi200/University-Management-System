@@ -50,6 +50,7 @@ The project contains the following major modules:
 
 - HTML5
 - CSS3
+- JSS
 - Git
 - GitHub
 
